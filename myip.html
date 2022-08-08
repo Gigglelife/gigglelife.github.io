@@ -106,7 +106,7 @@
             line-height:20px;
             display: inline-block;
             vertical-align:bottom;
-            width: 28%;
+            width: 25%;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
@@ -145,7 +145,7 @@
      <tr><td>
     <div style="display: flex">
         <div style="width: 0%">
-            <h3 style="margin: 10px -2% 10px 2%"><%:IP Address%></h3>
+            <!-- <h3 style="margin: 10px -2% 10px 2%"><%:IP Address%></h3> -->
             <p style="margin: 10px -2% 10px 2%">
                 <span class="ip-title">IP.TB&nbsp;&nbsp;&nbsp;&nbsp;<%:Mainland%>:</span><span class="ip-result" id="ip-taobao"></span> <span class="ip-geo" id="ip-taobao-geo"></span>
             </p>
@@ -159,21 +159,12 @@
                 <span class="ip-title">IPIFY&nbsp;&nbsp;&nbsp;&nbsp;<%:Abroad%>:</span><span class="ip-result" id="ip-ipify"></span> <span class="ip-geo" id="ip-ipify-geo"></span>
             </p>
             <p>&nbsp;</p>
-            <p style="margin: 10px -2% 10px 2%">
-                <span class="ip-title">commits：</span>
-                    <a href="https://github.com/vernesong/OpenClash/commits/dev" target="_blank" style="text-decoration:none">
-                        <span style="font-size:16px;color:black;" class="addlink">
-                            🐈‍⬛ OpenClash dev commits
-                        </span>
-                    </a>
-                    <!-- <span class="ip-geo"></span> -->
-            </p>
         </div>
         <div style="width: 100%">
-            <h3 style="margin: 10px 0 10px 5%"><%:Website Access Check%></h3>
+            <h3 style="margin: 10px 0 10px 5%">网站访问检查</h3>
             <p style="margin: 10px 0 10px 5%">
                 <a href="https://www.bilibili.com" target="_blank">
-                    <span class="ip-state_title"><%:Bilibili%>:</span>
+                    <span class="ip-state_title">Bilibili:</span>
                 </a><span id="http-bilibili"></span><span id="ldtime-bilibili"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
@@ -188,7 +179,7 @@
             </p>
             <p style="margin: 10px 0 10px 5%">
                 <a href="https://www.google.com" target="_blank">
-                    <span class="ip-state_title">🇺🇸 <%:Google%>:</span>
+                    <span class="ip-state_title">🇺🇸 Google:</span>
                 </a><span id="http-google"></span><span id="ldtime-google"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
@@ -334,13 +325,13 @@
                 let timeout = setTimeout(() => {
                     img.onerror = img.onload = null;
                     $$.getElementById(cbLoID).style.display = 'none';
-                    $$.getElementById(cbElID).innerHTML = '<span class="sk-text-error"><%:Access Timed Out%></span>'
+                    $$.getElementById(cbElID).innerHTML = '<span class="sk-text-error">访问超时</span>'
                 }, 5000);
 
                 img.onerror = () => {
                     clearTimeout(timeout);
                     $$.getElementById(cbLoID).style.display = 'none';
-                    $$.getElementById(cbElID).innerHTML = '<span class="sk-text-error"><%:Access Denied%></span>'
+                    $$.getElementById(cbElID).innerHTML = '<span class="sk-text-error">访问拒绝</span>'
                 }
 
                 img.onload = () => {
@@ -361,7 +352,7 @@
                         $$.getElementById(cbLoID).innerHTML = '<span class="sk-load-success">' + img_load_time + ' ms</span>'
                         $$.getElementById(cbLoID).style.color = '#e85600';
                     }
-                    $$.getElementById(cbElID).innerHTML = '<span class="sk-text-success"><%:Access Normal%></span>'
+                    $$.getElementById(cbElID).innerHTML = '<span class="sk-text-success">连接正常</span>'
                 }
 
                 img.src = `https://${domain}/favicon.ico?${+(new Date)}`
