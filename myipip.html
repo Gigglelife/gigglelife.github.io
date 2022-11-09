@@ -127,6 +127,9 @@
 
 
 
+        html {
+            font-family: system-ui,sans-serif;
+        }
         table {
             border-spacing: 0px;
         }
@@ -144,9 +147,6 @@
         .ip-state_title, a>span, a {
             text-decoration: none;
             color: black;
-        }
-        html {
-            font-family: system-ui,sans-serif;
         }
     </style>
 </head>
@@ -233,6 +233,18 @@
                     <span class="ip-state_title">
                         <img src="https://telegram.org/favicon.ico" />Telegram:</span>
                 </a><span id="http-telegram"></span><span id="ldtime-telegram"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://www.innoreader.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.innoreader.com/favicon.ico" />Innoreader:</span>
+                </a><span id="http-innoreader"></span><span id="ldtime-innoreader"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://tophub.today/dashboard" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://file.ipadown.com/tophub/assets/images/favicon/favicon-16x16.png" />Tophub:</span>
+                </a><span id="http-tophub"></span><span id="ldtime-tophub"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
                 <a href="https://www.instagram.com" target="_blank">
@@ -363,6 +375,8 @@
         $$.getElementById('http-youtube').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-youtubeplay').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-telegram').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-innoreader').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-tophub').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-instagram').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-twitter').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-dmm').innerHTML = '<span class="ip-checking">测试中...</span>';
@@ -414,6 +428,8 @@
                 HTTP.checker('www.youtube.com', 'http-youtube', 'ldtime-youtube');
                 HTTP.checker('measurement-lab.org', 'http-youtubeplay', 'ldtime-youtubeplay');
                 HTTP.checker('telegram.org', 'http-telegram', 'ldtime-telegram');
+                HTTP.checker('innoreader.com', 'http-innoreader', 'ldtime-innoreader');
+                HTTP.checker('tophub.today', 'http-tophub', 'ldtime-tophub');
                 HTTP.checker('www.instagram.com', 'http-instagram', 'ldtime-instagram');
                 HTTP.checker('twitter.com', 'http-twitter', 'ldtime-twitter');
                 HTTP.checker('www.dmm.co.jp', 'http-dmm', 'ldtime-dmm');
