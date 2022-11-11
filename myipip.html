@@ -265,6 +265,12 @@
                 </a><span id="http-twitter"></span><span id="ldtime-twitter"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
+                <a href="https://search.yahoo.co.jp/realtime/search?p=白雪恋琉&mtype=image" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://yahoo.co.jp/favicon.ico" />Yahoo!Ja</span>
+                </a><span id="http-yahoo"></span><span id="ldtime-yahoo"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
                 <a href="https://www.dmm.co.jp" target="_blank">
                     <span class="ip-state_title">
                         <img src="https://www.dmm.co.jp/favicon.ico" />DMM</span>
@@ -386,6 +392,7 @@
         $$.getElementById('http-weibo').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-instagram').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-twitter').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-yahoo').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-dmm').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-pixiv').innerHTML = '<span class="ip-checking">测试中...</span>';
         let HTTP = {
@@ -440,6 +447,7 @@
                 HTTP.checker('weibo.com', 'http-weibo', 'ldtime-weibo');
                 HTTP.checker('www.instagram.com', 'http-instagram', 'ldtime-instagram');
                 HTTP.checker('twitter.com', 'http-twitter', 'ldtime-twitter');
+                HTTP.checker('yahoo.co.jp', 'http-yahoo', 'ldtime-yahoo');
                 HTTP.checker('www.dmm.co.jp', 'http-dmm', 'ldtime-dmm');
                 HTTP.checker('www.pixiv.net', 'http-pixiv', 'ldtime-pixiv');
             }
