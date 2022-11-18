@@ -192,11 +192,18 @@
             </p>
             <p></p>
             <p style="margin: 10px 0 10px 5%">
-                <a href="https://t.bilibili.com" target="_blank">
+                <a href="https://www.bilibili.com" target="_blank">
                     <span class="ip-state_title">
                         <img src="https://www.bilibili.com/favicon.ico" />Bilibili
                     </span>
                 </a><span id="http-bilibili"></span><span id="ldtime-bilibili"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://nga.178.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://nga.178.com/favicon.ico" />NGA
+                    </span>
+                </a><span id="http-nga"></span><span id="ldtime-nga"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
                 <a href="https://www.github.com" target="_blank">
@@ -381,6 +388,7 @@
         };
         
         $$.getElementById('http-bilibili').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-nga').innerHTML = '<span    class="ip-checking">测试中...</span>';
         $$.getElementById('http-github').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-google').innerHTML =  '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-spotify').innerHTML =  '<span class="ip-checking">测试中...</span>';
@@ -389,12 +397,12 @@
         $$.getElementById('http-telegram').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-innoreader').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-tophub').innerHTML = '<span class="ip-checking">测试中...</span>';
-        $$.getElementById('http-weibo').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-weibo').innerHTML = '<span  class="ip-checking">测试中...</span>';
         $$.getElementById('http-instagram').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-twitter').innerHTML = '<span class="ip-checking">测试中...</span>';
-        $$.getElementById('http-yahoo').innerHTML = '<span class="ip-checking">测试中...</span>';
-        $$.getElementById('http-dmm').innerHTML = '<span class="ip-checking">测试中...</span>';
-        $$.getElementById('http-pixiv').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-yahoo').innerHTML = '<span  class="ip-checking">测试中...</span>';
+        $$.getElementById('http-dmm').innerHTML = '<span    class="ip-checking">测试中...</span>';
+        $$.getElementById('http-pixiv').innerHTML = '<span  class="ip-checking">测试中...</span>';
         let HTTP = {
             checker: (domain, cbElID, cbLoID) => {
                 let img = new Image;
@@ -436,6 +444,7 @@
             },
             runcheck: () => {
                 HTTP.checker('www.bilibili.com', 'http-bilibili', 'ldtime-bilibili');
+                HTTP.checker('nga.178.com', 'http-nga', 'ldtime-nga');
                 HTTP.checker('github.com', 'http-github', 'ldtime-github');
                 HTTP.checker('www.google.com', 'http-google', 'ldtime-google');
                 HTTP.checker('open.spotify.com', 'http-spotify', 'ldtime-spotify');
