@@ -193,6 +193,13 @@
             </p>
             <p></p>
             <p style="margin: 10px 0 10px 5%">
+                <a href="https://www.kdocs.cn/" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.kdocs.cn/favicon.ico" />金山文档
+                    </span>
+                </a><span id="http-kdocs"></span><span id="ldtime-kdocs"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
                 <a href="https://t.bilibili.com" target="_blank">
                     <span class="ip-state_title">
                         <img src="https://www.bilibili.com/favicon.ico" />Bilibili
@@ -205,6 +212,13 @@
                         <img src="https://nga.178.com/favicon.ico" />NGA
                     </span>
                 </a><span id="http-nga"></span><span id="ldtime-nga"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://bbs.mihoyo.com/ys/obc/channel/position/48/53" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://bbs.mihoyo.com/favicon.ico" />原神-观测枢
+                    </span>
+                </a><span id="http-mihoyo"></span><span id="ldtime-mihoyo"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
                 <a href="https://www.github.com" target="_blank">
@@ -388,8 +402,10 @@
             }
         };
         
+        $$.getElementById('http-kdocs').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-bilibili').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-nga').innerHTML = '<span    class="ip-checking">测试中...</span>';
+        $$.getElementById('http-mihoyo').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-github').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-google').innerHTML =  '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-spotify').innerHTML =  '<span class="ip-checking">测试中...</span>';
@@ -444,8 +460,10 @@
                 img.src = `https://${domain}/favicon.ico?${+(new Date)}`
             },
             runcheck: () => {
+                HTTP.checker('www.kdocs.cn', 'http-kdocs', 'ldtime-kdocs');
                 HTTP.checker('www.bilibili.com', 'http-bilibili', 'ldtime-bilibili');
                 HTTP.checker('nga.178.com', 'http-nga', 'ldtime-nga');
+                HTTP.checker('bbs.mihoyo.com', 'http-mihoyo', 'ldtime-mihoyo');
                 HTTP.checker('github.com', 'http-github', 'ldtime-github');
                 HTTP.checker('www.google.com', 'http-google', 'ldtime-google');
                 HTTP.checker('open.spotify.com', 'http-spotify', 'ldtime-spotify');
