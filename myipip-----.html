@@ -1,0 +1,552 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-dns-prefetch-control" content="on">
+    <link rel="icon" type="image/x-icon" href="https://cdn.jsdelivr.net/gh/acquia/lightning@5.0.x/lightning-logo.png">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//whois.pconline.com.cn/ipJson.jsp">
+    <link rel="dns-prefetch" href="//www.taobao.com/help/getip.php">
+    <link rel="dns-prefetch" href="//api-ipv4.ip.sb">
+    <link rel="dns-prefetch" href="//api.ipify.org">
+    <link rel="dns-prefetch" href="//api.ttt.sh">
+    <link rel="dns-prefetch" href="//qqwry.api.skk.moe">
+    <link rel="dns-prefetch" href="//d.skk.moe">
+    <link rel="preconnect" href="https://www.taobao.com/help/getip.php">
+    <link rel="preconnect" href="https://whois.pconline.com.cn/ipJson.jsp">
+    <link rel="preconnect" href="https://api-ipv4.ip.sb">
+    <link rel="preconnect" href="https://api.ipify.org">
+    <link rel="preconnect" href="https://api.ttt.sh">
+    <link rel="preconnect" href="https://qqwry.api.skk.moe">
+    <link rel="preconnect" href="https://d.skk.moe">
+    <meta name="referrer" content="no-referrer">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
+    <title>IP 地址查询</title>
+    <style>
+        .ip-title {
+            font-weight: bold;
+            font-size:15px;
+            display: inline-block;
+            width: 25%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            vertical-align:bottom;
+        }
+        
+        .ip-state_title {
+            font-weight: bold;
+            font-size:15px;
+            display: inline-block;
+            width: 42%;
+            vertical-align:bottom;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transform:translateY(5%);
+        }
+        
+        .ip-result {
+            font-size:16px;
+            margin:0px 0px 0px 5%;
+            white-space: nowrap;  /*强制span不换行*/
+            display: inline-block;  /*将span当做块级元素对待*/
+            width: 25%;  /*限制宽度*/
+            overflow: hidden;  /*超出宽度部分隐藏*/
+            text-overflow: ellipsis;  /*超出部分以点号代替*/
+            vertical-align:bottom;
+            transform:translateY(8%);
+        }
+        
+        .ip-geo {
+            font-size:15px;
+            line-height:20px;
+            white-space: nowrap;  /*强制span不换行*/
+            display: inline-block;  /*将span当做块级元素对待*/
+            width: 35%;  /*限制宽度*/
+            overflow: hidden;  /*超出宽度部分隐藏*/
+            text-overflow: ellipsis;  /*超出部分以点号代替*/
+            text-align: right;
+            vertical-align:bottom;
+            transform:translateY(15%);
+        }
+        
+        .ip-checking {
+            font-size:15px;
+            line-height:20px;
+            display: inline-block;
+            vertical-align:bottom;
+            width: 29%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            transform:translateY(12%);
+        }
+
+        .sk-text-success {
+            color: #32b643;
+            font-size:15px;
+            line-height:20px;
+            display: inline-block;
+            vertical-align:bottom;
+            width: 30%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
+            transform:translateY(12%);
+        }
+        
+        .sk-load-success {
+            font-size:15px;
+            line-height:20px;
+            display: inline-block;
+            vertical-align:bottom;
+            width: 20%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: right;
+            transform:translateY(12%);
+        }
+
+        .sk-text-error {
+            color: #e85600;
+            font-size:15px;
+            line-height:20px;
+            display: inline-block;
+            vertical-align:bottom;
+            width: 30%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            text-align: left;
+            transform:translateY(12%);
+        }
+
+
+
+
+
+        html {
+            font-family: system-ui,sans-serif;
+            max-width: 700px;
+            margin: auto;
+        }
+        table {
+            border-spacing: 0px;
+        }
+        .cbi-section {
+            border: none;
+        }
+
+/*        p:hover { text-decoration: underline !important; }*/
+        p>a>span>img {
+            width: 16px;
+            margin: 0px 3px -2px 0;
+        }
+        .ip-state_title {
+            font-family: system-ui,sans-serif;
+        }
+        .ip-state_title, a>span, a {
+            text-decoration: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+<fieldset class="cbi-section">
+    <table width="100%">
+     <tr><td>
+    <div style="display: flex">
+        <div style="width: 0%">
+            <!-- <h3 style="margin: 10px -2% 10px 2%"><%:IP Address%></h3> -->
+            <p style="margin: 10px -2% 10px 2%">
+                <span class="ip-title">IP.TB&nbsp;&nbsp;&nbsp;&nbsp;<%:Mainland%>:</span><span class="ip-result" id="ip-taobao"></span> <span class="ip-geo" id="ip-taobao-geo"></span>
+            </p>
+            <p style="margin: 10px -2% 10px 2%">
+                <span class="ip-title">IP.PC&nbsp;&nbsp;&nbsp;&nbsp;<%:Mainland%>:</span><span class="ip-result" id="ip-pcol"></span> <span class="ip-geo" id="ip-pcol-geo"></span>
+            </p>
+            <p style="margin: 10px -2% 10px 2%">
+                <span class="ip-title">IP.SB&nbsp;&nbsp;&nbsp;&nbsp;<%:Abroad%>:</span><span class="ip-result" id="ip-ipsb"></span> <span class="ip-geo" id="ip-ipsb-geo"></span>
+            </p>
+            <p style="margin: 10px -2% 10px 2%">
+                <span class="ip-title">IPIFY&nbsp;&nbsp;&nbsp;&nbsp;<%:Abroad%>:</span><span class="ip-result" id="ip-ipify"></span> <span class="ip-geo" id="ip-ipify-geo"></span>
+            </p>
+        </div>
+        <div style="width: 100%">
+            <!-- <h3 style="margin: 10px 0 10px 5%"><%:Website Access Check%></h3> -->
+            <p style="margin: 10px 0% 10px 5%">
+                <!-- <span class="ip-title">机场地址：</span> -->
+                    <a href="https://www.cordc.xyz/user/" target="_blank" style="text-decoration:none">
+                        <span style="font-size:16px;" class="addlink">
+                            🛫 CordCloud
+                        </span>
+                    </a>
+                    <!-- <span class="ip-geo"></span> -->
+            </p>
+            <p style="margin: 10px 0% 10px 5%">
+                <!-- <span class="ip-title">SpeedTest：</span> -->
+                    <a href="https://gigglelife.github.io/InfinitySpeedTest/" target="_blank" style="text-decoration:none">
+                        <span style="font-size:16px;" class="addlink">
+                            ⏱️ InfinitySpeedTest
+                        </span>
+                    </a>
+                    <!-- <span class="ip-geo"></span> -->
+            </p>
+            <p style="margin: 10px 0% 10px 5%">
+                <!-- <span class="ip-title">commits：</span> -->
+                    <a href="https://github.com/vernesong/OpenClash/commits/dev" target="_blank" style="text-decoration:none">
+                        <span style="font-size:16px;" class="addlink">
+                            🐈‍⬛ OpenClash dev commits
+                        </span>
+                    </a>
+                    <!-- <span class="ip-geo"></span> -->
+            </p>
+            <p></p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://www.kdocs.cn/latest?from=docs" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.kdocs.cn/favicon.ico" />金山文档
+                    </span>
+                </a><span id="http-kdocs"></span><span id="ldtime-kdocs"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://t.bilibili.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.bilibili.com/favicon.ico" />Bilibili
+                    </span>
+                </a><span id="http-bilibili"></span><span id="ldtime-bilibili"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://nga.178.com/thread.php?fid=-7#topicrows" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://nga.178.com/favicon.ico" />NGA
+                    </span>
+                </a><span id="http-nga"></span><span id="ldtime-nga"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://bbs.mihoyo.com/ys/obc/channel/position/48/53" target="_blank"> 
+                    <span class="ip-state_title">
+                        <img src="https://bbs.mihoyo.com/favicon.ico" />原神-观测枢
+                    </span>
+                </a><span id="http-mihoyo"></span><span id="ldtime-mihoyo"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://github.com/Gigglelife?direction=desc&sort=updated&tab=stars#user-starred-repos" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://github.com/favicon.ico" />GitHub</span>
+                </a><span id="http-github"></span><span id="ldtime-github"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://open.spotify.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://open.spotify.com/favicon.ico" />Spotify</span>
+                </a><span id="http-spotify"></span><span id="ldtime-spotify"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://mail.google.com/mail/mu/mp/875" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.google.com/favicon.ico" />Google
+                    </span>
+                </a><span id="http-google"></span><span id="ldtime-google"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://www.youtube.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.youtube.com/s/desktop/233efd8f/img/favicon_32x32.png" />YouTube
+                    </span>
+                </a><span id="http-youtube"></span><span id="ldtime-youtube"></span>
+            </p>
+            <p style="margin: 10px 0 10px 6%">
+                <span class="ip-state_title">YouTube Play</span>
+                <span id="http-youtubeplay"></span><span id="ldtime-youtubeplay"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://web.telegram.org" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://telegram.org/favicon.ico" />Telegram</span>
+                </a><span id="http-telegram"></span><span id="ldtime-telegram"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://www.innoreader.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.innoreader.com/favicon.ico" />Innoreader</span>
+                </a><span id="http-innoreader"></span><span id="ldtime-innoreader"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://tophub.today/dashboard" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://file.ipadown.com/tophub/assets/images/favicon/favicon-32x32.png" />Tophub</span>
+                </a><span id="http-tophub"></span><span id="ldtime-tophub"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://weibo.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://weibo.com/favicon.ico" />Weibo</span>
+                </a><span id="http-weibo"></span><span id="ldtime-weibo"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://www.instagram.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.instagram.com/favicon.ico" />Instagram</span>
+                </a><span id="http-instagram"></span><span id="ldtime-instagram"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://twitter.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://abs.twimg.com/favicons/twitter.2.ico" />Twitter</span>
+                </a><span id="http-twitter"></span><span id="ldtime-twitter"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://search.yahoo.co.jp/realtime/search?p=白雪恋琉&mtype=image" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://yahoo.co.jp/favicon.ico" />Yahoo!Ja</span>
+                </a><span id="http-yahoo"></span><span id="ldtime-yahoo"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://www.dmm.co.jp" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.dmm.co.jp/favicon.ico" />DMM</span>
+                </a><span id="http-dmm"></span><span id="ldtime-dmm"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://www.pixiv.net" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.pixiv.net/favicon.ico" />Pixiv</span>
+                </a><span id="http-pixiv"></span><span id="ldtime-pixiv"></span>
+            </p>
+        </div>
+    </div>
+    <div>
+        <p style="float: right; margin: 5px 10px 10px 0; font-size:15px">Powered by <a style="text-decoration: none; color: #666" onclick="return ip_skk()" href="javascript:void(0);">ip.skk.moe</a></p>
+    </div>
+    </td></tr>
+    </table>
+</fieldset>
+</body>
+    <script>
+        function ip_skk()
+       {
+        url2='https://ip.skk.moe';
+        window.open(url2);
+       }
+        const $$ = document;
+        $$.getElementById('ip-pcol').innerHTML = '<%:Querying...%>';
+        $$.getElementById('ip-ipify').innerHTML = '<%:Querying...%>';
+        $$.getElementById('ip-taobao').innerHTML = '<%:Querying...%>';
+        $$.getElementById('ip-ipsb').innerHTML = '<%:Querying...%>';
+        let random = parseInt(Math.random() * 100000000);
+        let IP = {
+            get: (url, type) =>
+                fetch(url, { method: 'GET' }).then((resp) => {
+                    if (type === 'text')
+                        return Promise.all([resp.ok, resp.status, resp.text(), resp.headers]);
+                    else {
+                        return Promise.all([resp.ok, resp.status, resp.json(), resp.headers]);
+                    }
+                }).then(([ok, status, data, headers]) => {
+                    if (ok) {
+                        let json = {
+                            ok,
+                            status,
+                            data,
+                            headers
+                        }
+                        return json;
+                    } else {
+                        throw new Error(JSON.stringify(json.error));
+                    }
+                }).catch(error => {
+                    throw error;
+                }),
+            parseIPIpip: (ip, elID) => {
+                const v4 = '(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)(?:\\.(?:25[0-5]|2[0-4]\\d|1\\d\\d|[1-9]\\d|\\d)){3}';
+                const v4Exact = new RegExp(`^${v4}$`);
+                const anonymizedIp = (() => {
+                    if (v4Exact.test(ip)) {
+                        const [a, b, c] = ip.split('.');
+                        return `${a}.${b}.${c}.0`;
+                    }
+                    return ip;
+                })();
+
+                fetch(`https://qqwry.api.skk.moe/${anonymizedIp}`, {
+                referrerPolicy: 'no-referrer-when-downgrade',
+                }).then(r => r.json())
+                .then(resp => {
+                    $$.getElementById(elID).innerHTML = resp.geo;
+                    //$$.getElementById(elID).innerHTML = `${resp.data.country} ${resp.data.regionName} ${resp.data.city} ${resp.data.isp}`;
+                })
+            },
+            getIpipnetIP: () => {
+                IP.get(window.location.protocol+`//myip.ipip.net/?z=${random}`, 'text')
+                    .then((resp) => {
+                        let data = resp.data.replace('当前 IP：', '').split(' 来自于：');
+                        $$.getElementById('ip-ipipnet').innerHTML = `${data[0]}`;
+                        $$.getElementById('ip-ipipnet-geo').innerHTML = `${data[1]}`;
+                    });
+            },
+            getIPApiIP: () => {
+                IP.get(`https://ipapi.co/json?z=${random}`, 'json')
+                    .then(resp => {
+                        $$.getElementById('ip-ipapi').innerHTML = resp.data.ip;
+                        IP.parseIPIpip(resp.data.ip, 'ip-ipapi-geo');
+                    })
+            },
+            getSpeedIP: () => {
+                IP.get(`https://forge.speedtest.cn/api/location/info?z=${random}`, 'json')
+                    .then(resp => {
+                        $$.getElementById('ip-speedtest').innerHTML = resp.data.ip;
+                        $$.getElementById('ip-speedtest-geo').innerHTML = resp.data.country + resp.data.province + resp.data.city + (resp.data.distinct == "null" ? resp.data.distinct : '') + ' '  + (resp.data.isp == "null" ? resp.data.isp : '');
+                        //IP.parseIPIpip(resp.data.ip, 'ip-speedtest-geo');
+                    })
+            },
+            getIpifyIP: () => {
+                IP.get(`https://api.ipify.org/?format=json&z=${random}`, 'json')
+                .then(resp => {
+                    $$.getElementById('ip-ipify').innerHTML = resp.data.ip;
+                    return resp.data.ip;
+                })
+                .then(ip => {
+                    IP.parseIPIpip(ip, 'ip-ipify-geo');
+                })
+            }
+        };
+        
+        $$.getElementById('http-kdocs').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-bilibili').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-nga').innerHTML = '<span    class="ip-checking">测试中...</span>';
+        $$.getElementById('http-mihoyo').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-github').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-google').innerHTML =  '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-spotify').innerHTML =  '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-youtube').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-youtubeplay').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-telegram').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-innoreader').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-tophub').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-weibo').innerHTML = '<span  class="ip-checking">测试中...</span>';
+        $$.getElementById('http-instagram').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-twitter').innerHTML = '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-yahoo').innerHTML = '<span  class="ip-checking">测试中...</span>';
+        $$.getElementById('http-dmm').innerHTML = '<span    class="ip-checking">测试中...</span>';
+        $$.getElementById('http-pixiv').innerHTML = '<span  class="ip-checking">测试中...</span>';
+        let HTTP = {
+            checker: (domain, cbElID, cbLoID) => {
+                let img = new Image;
+                let img_start_time = (+new Date());
+                let timeout = setTimeout(() => {
+                    img.onerror = img.onload = null;
+                    $$.getElementById(cbLoID).style.display = 'none';
+                    $$.getElementById(cbElID).innerHTML = '<span class="sk-text-error">访问超时</span>'
+                }, 5000);
+
+                img.onerror = () => {
+                    clearTimeout(timeout);
+                    $$.getElementById(cbLoID).style.display = 'none';
+                    $$.getElementById(cbElID).innerHTML = '<span class="sk-text-error">访问拒绝</span>'
+                }
+
+                img.onload = () => {
+                    clearTimeout(timeout);
+                    let img_load_time = (new Date())- img_start_time;
+                    if ($$.getElementById(cbLoID).style.display == 'none') {
+                        $$.getElementById(cbLoID).style.display = '';
+                    }
+                    if (img_load_time <= 500) {
+                        $$.getElementById(cbLoID).innerHTML = '<span class="sk-load-success">' + img_load_time + ' ms</span>'
+                        $$.getElementById(cbLoID).style.color = '#32b643';
+                    }
+                    else if (img_load_time > 500 && img_load_time <= 1000) {
+                        $$.getElementById(cbLoID).innerHTML = '<span class="sk-load-success">' + img_load_time + ' ms</span>'
+                        $$.getElementById(cbLoID).style.color = 'orange';
+                    }
+                    else {
+                        $$.getElementById(cbLoID).innerHTML = '<span class="sk-load-success">' + img_load_time + ' ms</span>'
+                        $$.getElementById(cbLoID).style.color = '#e85600';
+                    }
+                    $$.getElementById(cbElID).innerHTML = '<span class="sk-text-success">访问正常</span>'
+                }
+
+                img.src = `https://${domain}/favicon.ico?${+(new Date)}`
+            },
+            runcheck: () => {
+                HTTP.checker('www.kdocs.cn', 'http-kdocs', 'ldtime-kdocs');
+                HTTP.checker('www.bilibili.com', 'http-bilibili', 'ldtime-bilibili');
+                HTTP.checker('nga.178.com', 'http-nga', 'ldtime-nga');
+                HTTP.checker('bbs.mihoyo.com', 'http-mihoyo', 'ldtime-mihoyo');
+                HTTP.checker('github.com', 'http-github', 'ldtime-github');
+                HTTP.checker('www.google.com', 'http-google', 'ldtime-google');
+                HTTP.checker('open.spotify.com', 'http-spotify', 'ldtime-spotify');
+                HTTP.checker('www.youtube.com', 'http-youtube', 'ldtime-youtube');
+                HTTP.checker('measurement-lab.org', 'http-youtubeplay', 'ldtime-youtubeplay');
+                HTTP.checker('telegram.org', 'http-telegram', 'ldtime-telegram');
+                HTTP.checker('innoreader.com', 'http-innoreader', 'ldtime-innoreader');
+                HTTP.checker('tophub.today', 'http-tophub', 'ldtime-tophub');
+                HTTP.checker('weibo.com', 'http-weibo', 'ldtime-weibo');
+                HTTP.checker('www.instagram.com', 'http-instagram', 'ldtime-instagram');
+                HTTP.checker('twitter.com', 'http-twitter', 'ldtime-twitter');
+                HTTP.checker('yahoo.co.jp', 'http-yahoo', 'ldtime-yahoo');
+                HTTP.checker('www.dmm.co.jp', 'http-dmm', 'ldtime-dmm');
+                HTTP.checker('www.pixiv.net', 'http-pixiv', 'ldtime-pixiv');
+            }
+        };
+
+
+        function getPcolIP(data){
+            let pcisp = data.addr.split(' ');
+            $$.getElementById('ip-pcol').innerHTML = data.ip;
+            $$.getElementById('ip-pcol-geo').innerHTML = `${data.pro}${data.city}${data.region} ${pcisp[1]}`;
+        };
+
+        function getIpsbIP(data){
+            $$.getElementById('ip-ipsb').innerHTML = data.ip;
+            IP.parseIPIpip(data.ip, 'ip-ipsb-geo');
+        };
+        
+        function ipCallback(data){
+            $$.getElementById('ip-taobao').innerHTML = data.ip;
+            IP.parseIPIpip(data.ip, 'ip-taobao-geo');
+        };
+          
+        function myip_Load()
+        {
+            var pcip = document.getElementsByTagName('HEAD').item(0);
+            var pcipScript= document.createElement("script");
+            var random = parseInt(Math.random() * 100000000);
+            pcipScript.defer = "defer";
+            pcipScript.src=`https://whois.pconline.com.cn/ipJson.jsp?callback=getPcolIP&z=${random}`;
+            pcip.appendChild(pcipScript);
+            
+            var sbip = document.getElementsByTagName('HEAD').item(0);
+            var sbipScript= document.createElement("script");
+            sbipScript.defer = "defer";
+            sbipScript.src='https://api-ipv4.ip.sb/jsonip?callback=getIpsbIP';
+            sbip.appendChild(sbipScript);
+            
+            var tbip = document.getElementsByTagName('HEAD').item(0);
+            var tbipScript= document.createElement("script");
+            tbipScript.defer = "defer";
+            tbipScript.src='https://www.taobao.com/help/getip.php?callback=ipCallback';
+            tbip.appendChild(sbipScript);
+            
+            //HTTP.runcheck();
+            IP.getIpifyIP();
+            //IP.getSpeedIP();
+        }
+
+        HTTP.runcheck();
+        IP.getIpifyIP();
+        //IP.getSpeedIP();
+        setInterval("HTTP.runcheck()", Math.floor(Math.random()*(10-5+1)+5)*1000);
+        setInterval("myip_Load()", Math.floor(Math.random()*(30-10+1)+10)*1000);
+        
+
+    </script>
+    <script type="text/javascript">
+        document.write('<script defer="defer" src="https://whois.pconline.com.cn/ipJson.jsp?callback=getPcolIP&z='+parseInt(Math.random() * 100000000)+'" type="text/javascript"><\/script>');
+    </script>
+    <script defer="defer" src="https://api-ipv4.ip.sb/jsonip?callback=getIpsbIP"></script>
+    <script defer="defer" src="https://www.taobao.com/help/getip.php?callback=ipCallback"></script>
+</html>
