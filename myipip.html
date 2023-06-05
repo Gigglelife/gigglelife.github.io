@@ -178,6 +178,15 @@
         <div style="width: 100%">
             <!-- <h3 style="margin: 10px 0 10px 5%"><%:Website Access Check%></h3> -->
             <p style="margin: 10px 0% 10px 5%">
+                <!-- <span class="ip-title">Clash Dashboard：</span> -->
+                    <a href="https://clash.razord.top/#/settings?host=127.0.0.1&port=9090&secret=123456" target="_blank" style="text-decoration:none">
+                        <span style="font-size:16px;" class="addlink">
+                            <img src="https://gcore.jsdelivr.net/gh/Dreamacro/clash/docs/logo.png"/>clash.razord.top
+                        </span>
+                    </a>
+                    <!-- <span class="ip-geo"></span> -->
+            </p>
+            <p style="margin: 10px 0% 10px 5%">
                 <!-- <span class="ip-title">机场地址：</span> -->
                     <a href="https://www.cordc.xyz/user/" target="_blank" style="text-decoration:none">
                         <span style="font-size:16px;" class="addlink">
@@ -242,8 +251,16 @@
             <p style="margin: 10px 0 10px 5%">
                 <a href="https://open.spotify.com" target="_blank">
                     <span class="ip-state_title">
-                        <img src="https://open.spotify.com/favicon.ico" />Spotify</span>
+                        <img src="https://open.spotify.com/favicon.ico" />Spotify
+                    </span>
                 </a><span id="http-spotify"></span><span id="ldtime-spotify"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://music.163.com/#/user/home?id=973840" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://s1.music.126.net/style/favicon.ico" />网易云音乐
+                    </span>
+                </a><span id="http-163music"></span><span id="ldtime-163music"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
                 <a href="https://mail.google.com/mail/mu/mp/875" target="_blank">
@@ -422,6 +439,7 @@
         $$.getElementById('http-github').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-google').innerHTML =  '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-spotify').innerHTML =  '<span class="ip-checking">测试中...</span>';
+        $$.getElementById('http-163music').innerHTML =  '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-youtube').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-youtubeplay').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-telegram').innerHTML = '<span class="ip-checking">测试中...</span>';
@@ -480,6 +498,7 @@
                 HTTP.checker('github.com', 'http-github', 'ldtime-github');
                 HTTP.checker('www.google.com', 'http-google', 'ldtime-google');
                 HTTP.checker('open.spotify.com', 'http-spotify', 'ldtime-spotify');
+                HTTP.checker('music.163.com', 'http-spotify', 'ldtime-163music');
                 HTTP.checker('www.youtube.com', 'http-youtube', 'ldtime-youtube');
                 HTTP.checker('measurement-lab.org', 'http-youtubeplay', 'ldtime-youtubeplay');
                 HTTP.checker('telegram.org', 'http-telegram', 'ldtime-telegram');
