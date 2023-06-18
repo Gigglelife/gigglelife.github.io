@@ -335,6 +335,13 @@
                 </a><span id="http-yahoo"></span><span id="ldtime-yahoo"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
+                <a href="https://www.tiktok.com/following" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.tiktok.com/favicon.ico" />TikTok
+                    </span>
+                </a><span id="http-tiktok"></span><span id="ldtime-tiktok"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
                 <a href="https://www.dmm.co.jp" target="_blank">
                     <span class="ip-state_title">
                         <img src="https://www.dmm.co.jp/favicon.ico" />DMM
@@ -463,6 +470,7 @@
         $$.getElementById('http-instagram').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-twitter').innerHTML = '<span class="ip-checking">测试中...</span>';
         $$.getElementById('http-yahoo').innerHTML = '<span  class="ip-checking">测试中...</span>';
+        $$.getElementById('http-tiktok').innerHTML = '<span  class="ip-checking">测试中...</span>';
         $$.getElementById('http-dmm').innerHTML = '<span    class="ip-checking">测试中...</span>';
         $$.getElementById('http-pixiv').innerHTML = '<span  class="ip-checking">测试中...</span>';
         let HTTP = {
@@ -522,6 +530,7 @@
                 HTTP.checker('www.instagram.com', 'http-instagram', 'ldtime-instagram');
                 HTTP.checker('twitter.com', 'http-twitter', 'ldtime-twitter');
                 HTTP.checker('yahoo.co.jp', 'http-yahoo', 'ldtime-yahoo');
+                HTTP.checker('tiktok.com', 'http-tiktok', 'ldtime-tiktok');
                 HTTP.checker('www.dmm.co.jp', 'http-dmm', 'ldtime-dmm');
                 HTTP.checker('www.pixiv.net', 'http-pixiv', 'ldtime-pixiv');
             }
