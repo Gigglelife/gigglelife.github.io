@@ -13,14 +13,14 @@
     <link rel="dns-prefetch" href="//api-ipv4.ip.sb">
     <link rel="dns-prefetch" href="//api.ipify.org">
     <link rel="dns-prefetch" href="//api.ttt.sh">
-    <link rel="dns-prefetch" href="//qqwry.api.skk.moe">
+    <!--<link rel="dns-prefetch" href="//qqwry.api.skk.moe">-->
     <link rel="dns-prefetch" href="//d.skk.moe">
     <link rel="preconnect" href="https://www.taobao.com/help/getip.php">
     <link rel="preconnect" href="https://whois.pconline.com.cn/ipJson.jsp">
     <link rel="preconnect" href="https://api-ipv4.ip.sb">
     <link rel="preconnect" href="https://api.ipify.org">
     <link rel="preconnect" href="https://api.ttt.sh">
-    <link rel="preconnect" href="https://qqwry.api.skk.moe">
+    <!--<link rel="preconnect" href="https://qqwry.api.skk.moe">-->
     <link rel="preconnect" href="https://d.skk.moe">
     <meta name="referrer" content="no-referrer">
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,minimal-ui">
@@ -435,11 +435,11 @@
                     return ip;
                 })();
 
-                fetch(`https://qqwry.api.skk.moe/${anonymizedIp}`, {
+                fetch(`https://forge.speedtest.cn/api/location/info?z=${anonymizedIp}`, {
                 referrerPolicy: 'no-referrer-when-downgrade',
                 }).then(r => r.json())
                 .then(resp => {
-                    $$.getElementById(elID).innerHTML = resp.geo;
+                    //$$.getElementById(elID).innerHTML = resp.geo;
                     //$$.getElementById(elID).innerHTML = `${resp.data.country} ${resp.data.regionName} ${resp.data.city} ${resp.data.isp}`;
                 })
             },
