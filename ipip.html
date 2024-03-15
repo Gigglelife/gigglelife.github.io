@@ -1,6 +1,7 @@
 
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-dns-prefetch-control" content="on">
@@ -82,6 +83,7 @@
             text-overflow: ellipsis;
             transform:translateY(12%);
         }
+
         .sk-text-success {
             color: #32b643;
             font-size:15px;
@@ -108,6 +110,7 @@
             text-align: right;
             transform:translateY(12%);
         }
+
         .sk-text-error {
             color: #e85600;
             font-size:15px;
@@ -121,6 +124,11 @@
             text-align: left;
             transform:translateY(12%);
         }
+
+
+
+
+
         html {
             font-family: MiSans,system-ui,sans-serif;
             max-width: 700px;
@@ -132,6 +140,7 @@
         .cbi-section {
             border: none;
         }
+
 /*        p:hover { text-decoration: underline !important; }*/
         p>a>span>img {
             width: 16px;
@@ -218,20 +227,20 @@
                 <span id="http-kdocs"></span><span id="ldtime-kdocs"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
-                <a href="https://t.bilibili.com" target="_blank">
-                    <span class="ip-state_title">
-                        <img src="https://www.bilibili.com/favicon.ico" />Bilibili
-                    </span>
-                </a>
-                <span id="http-bilibili"></span><span id="ldtime-bilibili"></span>
-            </p>
-            <p style="margin: 10px 0 10px 5%">
                 <a href="https://tophub.today/dashboard" target="_blank">
                     <span class="ip-state_title">
                         <img src="https://file.ipadown.com/tophub/assets/images/favicon/favicon-32x32.png" />Tophub
                     </span>
                 </a>
                 <span id="http-tophub"></span><span id="ldtime-tophub"></span>
+            </p>
+            <p style="margin: 10px 0 10px 5%">
+                <a href="https://t.bilibili.com" target="_blank">
+                    <span class="ip-state_title">
+                        <img src="https://www.bilibili.com/favicon.ico" />Bilibili
+                    </span>
+                </a>
+                <span id="http-bilibili"></span><span id="ldtime-bilibili"></span>
             </p>
             <p style="margin: 10px 0 10px 5%">
                 <a href="https://nga.178.com/thread.php?fid=-7#topicrows" target="_blank">
@@ -427,6 +436,7 @@
                     }
                     return ip;
                 })();
+
                 fetch(`https://qqwry.api.skk.moe/${anonymizedIp}`, {
                 referrerPolicy: 'no-referrer-when-downgrade',
                 }).then(r => r.json())
@@ -499,11 +509,13 @@
                     $$.getElementById(cbLoID).style.display = 'none';
                     $$.getElementById(cbElID).innerHTML = '<span class="sk-text-error">访问超时</span>'
                 }, 5000);
+
                 img.onerror = () => {
                     clearTimeout(timeout);
                     $$.getElementById(cbLoID).style.display = 'none';
                     $$.getElementById(cbElID).innerHTML = '<span class="sk-text-error">访问拒绝</span>'
                 }
+
                 img.onload = () => {
                     clearTimeout(timeout);
                     let img_load_time = (new Date())- img_start_time;
@@ -524,6 +536,7 @@
                     }
                     $$.getElementById(cbElID).innerHTML = '<span class="sk-text-success">访问正常</span>'
                 }
+
                 img.src = `https://${domain}/favicon.ico?${+(new Date)}`
             },
             runcheck: () => {
@@ -549,11 +562,14 @@
                 HTTP.checker('www.pixiv.net', 'http-pixiv', 'ldtime-pixiv');
             }
         };
+
+
         function getPcolIP(data){
             let pcisp = data.addr.split(' ');
             $$.getElementById('ip-pcol').innerHTML = data.ip;
             $$.getElementById('ip-pcol-geo').innerHTML = `${data.pro}${data.city}${data.region} ${pcisp[1]}`;
         };
+
         function getIpsbIP(data){
             $$.getElementById('ip-ipsb').innerHTML = data.ip;
             IP.parseIPIpip(data.ip, 'ip-ipsb-geo');
@@ -589,12 +605,14 @@
             IP.getIpifyIP();
             //IP.getSpeedIP();
         }
+
         HTTP.runcheck();
         IP.getIpifyIP();
         //IP.getSpeedIP();
         setInterval("HTTP.runcheck()", Math.floor(Math.random()*(10-5+1)+5)*1000);
         setInterval("myip_Load()", Math.floor(Math.random()*(30-10+1)+10)*1000);
         
+
     </script>
     <script type="text/javascript">
         document.write('<script defer="defer" src="https://whois.pconline.com.cn/ipJson.jsp?callback=getPcolIP&z='+parseInt(Math.random() * 100000000)+'" type="text/javascript"><\/script>');
