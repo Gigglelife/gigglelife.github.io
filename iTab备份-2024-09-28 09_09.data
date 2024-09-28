@@ -1,0 +1,762 @@
+{
+  "navConfig": [
+    {
+      "id": "1",
+      "name": "主页",
+      "icon": "home",
+      "children": [
+        {
+          "id": "UQ7hfjGeYJVRjWhFnegJF8629",
+          "url": "http://192.168.2.11:8080/",
+          "name": "qb",
+          "src": "",
+          "type": "text",
+          "iconText": "qb",
+          "backgroundColor": "#72B9FF",
+          "view": 4
+        },
+        {
+          "id": "B_RnLGZQlK24OG7hpa4fj4909",
+          "url": "https://ljxi.github.io/NetworkPanel/",
+          "name": "ljxi.github.io",
+          "src": "https://files.codelife.cc/user-website-icon/20240830/RfCFAlWBl0GXVDoLsKMLC9386.png",
+          "type": "icon",
+          "iconText": "网络面",
+          "backgroundColor": "#f9620e",
+          "view": 25
+        },
+        {
+          "id": "lirsE89UkbDQxIeY34cTM7024",
+          "url": "https://www.tiktok.com/following",
+          "name": "TikTok",
+          "src": "https://files.codelife.cc/website/5fd6c84e8af9860fb41a9c0f.png",
+          "type": "icon",
+          "iconText": "Tik",
+          "view": 12
+        },
+        {
+          "id": "yzR8YQAucwinhiKfI3jt33331",
+          "url": "https://www.youtube.com/",
+          "name": "YouTube",
+          "src": "https://files.codelife.cc/icons/youtube.svg",
+          "type": "icon",
+          "iconText": "You",
+          "backgroundColor": "#ff0000",
+          "view": 21,
+          "size": "1x1"
+        },
+        {
+          "id": "KHgOwEaEwALR14p0tVq_W",
+          "url": "https://www.bilibili.com/",
+          "type": "icon",
+          "name": "Bilibili",
+          "src": "https://files.codelife.cc/icons/bilibili2.svg",
+          "backgroundColor": "#fe65a6",
+          "view": 10
+        },
+        {
+          "id": "dV9rPxgILGNdDIVLa_PVE7616",
+          "url": "https://www.bilibili.com/video/BV1Rj411p7b1",
+          "name": "bili视频收藏",
+          "src": "https://files.codelife.cc/icons/bilibili.svg",
+          "type": "folder",
+          "iconText": "哔哩哔",
+          "backgroundColor": "#01affd",
+          "view": 4,
+          "size": "1x1",
+          "children": [
+            {
+              "id": "wj4Mm3zTGpUUbfYFyGnK69865",
+              "url": "https://www.bilibili.com/video/BV1Rj411p7b1",
+              "name": "原神交响乐",
+              "src": "https://files.codelife.cc/icons/bilibili.svg",
+              "type": "icon",
+              "iconText": "哔哩哔",
+              "backgroundColor": "#01affd",
+              "view": 6
+            },
+            {
+              "id": "hCKpWOXP4pnvrAffC7UTz9277",
+              "url": "https://www.bilibili.com/video/BV1Ei4y1t7wf",
+              "name": "周杰伦 MV",
+              "src": "https://files.codelife.cc/icons/bilibili.svg",
+              "type": "icon",
+              "iconText": "哔哩哔",
+              "backgroundColor": "#01affd",
+              "view": 5
+            }
+          ]
+        },
+        {
+          "id": "791Ka7T32bqiSSsG1Mots8208",
+          "url": "https://movie.douban.com/",
+          "name": "豆瓣电影",
+          "src": "https://files.codelife.cc/icons/movie.douban.com.svg",
+          "type": "icon",
+          "iconText": "豆瓣电",
+          "backgroundColor": "#13b7e3",
+          "view": 20,
+          "size": "1x1"
+        },
+        {
+          "id": "YQnaJEUNJsKVAduSX3XqW9198",
+          "url": "https://v.aikanbot.com/",
+          "name": "爱看机器人",
+          "src": "https://files.codelife.cc/user-website-icon/20240612/zfyRVhxuoMOjYHoBbNRgn7983.png",
+          "type": "icon",
+          "iconText": "爱看机",
+          "backgroundColor": "#FFFFFF",
+          "view": 15
+        },
+        {
+          "id": "wkIb8NNAKP8AQQH772YdE1126",
+          "url": "https://pan.xunlei.com/?path=%2F%E5%91%A8%E6%98%9F%E9%A9%B0%E7%94%B5%E5%BD%B1%E5%90%88%E9%9B%86",
+          "name": "迅雷云盘",
+          "src": "https://files.codelife.cc/icons/pan.xunlei.com.svg",
+          "type": "icon",
+          "iconText": "迅雷云",
+          "backgroundColor": "#5786f8"
+        },
+        {
+          "id": "ywRuKP4MCqzorYBvZik0Y1683",
+          "url": "https://twitter.com",
+          "name": "Twitter",
+          "src": "https://files.codelife.cc/icons/twitter.svg",
+          "type": "icon",
+          "iconText": "Twi",
+          "backgroundColor": "#fff",
+          "view": 32
+        },
+        {
+          "id": "cJ_z_NOmQWnMNAFJxh36o9126",
+          "url": "https://search.yahoo.co.jp/realtime/search?mtype=image&p=%E6%92%AE%E5%BD%B1%E4%BC%9A",
+          "name": "Yahoo",
+          "src": "https://files.codelife.cc/user-website-icon/20240611/2QxJ9EWaheqMEG-Re3S-D7254.png",
+          "type": "icon",
+          "iconText": "",
+          "backgroundColor": "#023373",
+          "view": 11
+        },
+        {
+          "id": "zjl-DPm82hjD62NY1-jJl0813",
+          "url": "https://www.instagram.com/explore/",
+          "name": "Instagram",
+          "src": "https://files.codelife.cc/user-website-icon/20240611/I1aTw-hDo4BtbXdZvfIOu8973.png",
+          "type": "icon",
+          "iconText": "Ins",
+          "backgroundColor": "transparent",
+          "view": 4
+        },
+        {
+          "id": "dX5mqHHLF4ebBsGFU82_w2081",
+          "url": "https://weibo.com/hot",
+          "name": "Weibo",
+          "src": "https://files.codelife.cc/icons/weibo.svg",
+          "type": "icon",
+          "iconText": "Wei",
+          "backgroundColor": "#ffd852",
+          "view": 24
+        },
+        {
+          "id": "JUw2qmhMs__e6NUcIonFz6762",
+          "url": "https://place.weibo.com/",
+          "name": "Weibo Map",
+          "src": "https://files.codelife.cc/user-website-icon/20240611/61PCm50JBBp60dxvg-io88878.png",
+          "type": "icon",
+          "iconText": "Wei",
+          "backgroundColor": "transparent",
+          "view": 5
+        },
+        {
+          "id": "62UAhgwKZwJfw8iBndLEO6457",
+          "url": "https://web.telegram.org/a",
+          "name": "Telegram",
+          "src": "https://files.codelife.cc/icons/web.telegram.org.svg",
+          "type": "icon",
+          "iconText": "Tel",
+          "backgroundColor": "#2298d5",
+          "view": 79
+        },
+        {
+          "id": "V5YZp89SGZzHOKG-5N4521595",
+          "url": "https://tophub.today/dashboard",
+          "name": "今日热榜",
+          "src": "https://files.codelife.cc/icons/tophubtopday.svg",
+          "type": "icon",
+          "iconText": "今日热",
+          "backgroundColor": "#fff",
+          "view": 47
+        },
+        {
+          "id": "XOz3Of_YBb54qGrzQeF2h8482",
+          "url": "https://www.v2ex.com/",
+          "name": "V2EX",
+          "src": "https://files.codelife.cc/icons/v2ex.svg",
+          "type": "icon",
+          "iconText": "V2E",
+          "backgroundColor": "#222222",
+          "view": 78
+        },
+        {
+          "id": "ZSSCSjcfyJvg7XpwXHQoH9749",
+          "url": "https://nga.178.com/thread.php?fid=-7#topicrows",
+          "name": "NGA玩家社区",
+          "src": "https://files.codelife.cc/icons/95da27926ec62920.png",
+          "type": "icon",
+          "iconText": "NGA",
+          "backgroundColor": "#591804",
+          "view": 25
+        },
+        {
+          "id": "scmxyPF7VDqdiY6dLMRCe5391",
+          "url": "https://www.chiphell.com/forum-146-1.html#separatorline",
+          "name": "chiphell",
+          "src": "https://files.codelife.cc/icons/60b9ea85ae5a9ba4024b378b.png",
+          "type": "icon",
+          "iconText": "chi",
+          "backgroundColor": "#a81d1e",
+          "view": 14
+        },
+        {
+          "id": "dLmwiTdnYiliJwbg6oAhJ9445",
+          "url": "https://keylol.com/",
+          "name": "其乐 Keylol",
+          "src": "https://files.codelife.cc/icons/60b9eaf9ae5a9ba4024b39d2.png",
+          "type": "icon",
+          "iconText": "其乐 ",
+          "backgroundColor": "#ffffff",
+          "view": 75
+        },
+        {
+          "id": "x7FMRkHKm3-fKa8qYdAUs6144",
+          "url": "https://www.kdocs.cn/latest?from=docs",
+          "name": "金山文档",
+          "src": "https://files.codelife.cc/icons/www.kdocs.cn_latest.svg",
+          "type": "icon",
+          "iconText": "金山文",
+          "backgroundColor": "#fff",
+          "view": 14
+        },
+        {
+          "id": "m0-sCWQ-ZIYuBJfb4E3jk7798",
+          "url": "https://www.inoreader.com/feed/https%3A%2F%2Ffeedx.net%2Frss%2F163easy.xml",
+          "name": "Inoreader ",
+          "src": "https://files.codelife.cc/icons/60b9ee64ae5a9ba4024b44ce.png",
+          "type": "icon",
+          "iconText": "Ino",
+          "backgroundColor": "#000000",
+          "view": 25
+        },
+        {
+          "id": "fBOrI22ibEA5Y8ho_8rvQ8294",
+          "url": "https://store.steampowered.com/",
+          "name": "Steam",
+          "src": "https://files.codelife.cc/icons/steam.svg",
+          "type": "icon",
+          "iconText": "Ste",
+          "backgroundColor": "#000000",
+          "view": 8
+        },
+        {
+          "id": "TDKRnZPurttQnMBgyPvio0634",
+          "url": "https://www.epicgames.com/store/zh-CN/free-games",
+          "name": "Epic Games",
+          "src": "https://files.codelife.cc/website/5ad5625e0ddccc059241c95d.png",
+          "type": "icon",
+          "iconText": "Epi",
+          "view": 3
+        },
+        {
+          "id": "hYairpYhxEj5IXT8_oQbh1127",
+          "url": "https://steamdb.info/upcoming/free/",
+          "name": "SteamDB",
+          "src": "https://files.codelife.cc/icons/steamdb.info_upcoming_free_.svg.svg",
+          "type": "icon",
+          "iconText": "Ste",
+          "backgroundColor": "#212121",
+          "view": 26
+        },
+        {
+          "id": "j6n3llmt5c3mhsojcsU0c8881",
+          "url": "https://earth.google.com/web/",
+          "name": "谷歌地球",
+          "src": "https://files.codelife.cc/icons/earth-google.svg",
+          "type": "icon",
+          "iconText": "谷歌地",
+          "backgroundColor": "#fff",
+          "view": 14
+        },
+        {
+          "id": "tx8ZwKp2hhXXmdwKwUQ_15412",
+          "url": "https://mail.google.com/?authuser=1",
+          "name": "Gmail",
+          "src": "https://files.codelife.cc/user-website-icon/20240607/pjss974ZaZfT1TpkVXJz37326.png",
+          "type": "icon",
+          "iconText": "Gma",
+          "backgroundColor": "#fff",
+          "view": 4
+        },
+        {
+          "id": "b-WJfhZyQ2KIYfSRf3k4z1154",
+          "url": "https://github.com/stars?direction=desc&sort=updated",
+          "name": "GitHub",
+          "src": "https://files.codelife.cc/user-website-icon/20240607/ogiGJnUdc38fIvozQy-LB7779.svg",
+          "type": "icon",
+          "iconText": "Web",
+          "backgroundColor": "#FFFFFF",
+          "view": 38
+        },
+        {
+          "id": "Xg7Gsb6XGEHTg2JsKraIy8532",
+          "url": "https://keep.google.com/",
+          "name": "Google Keep",
+          "src": "https://files.codelife.cc/icons/60ba04e2ae5a9ba4024b8f78.png",
+          "type": "icon",
+          "iconText": "Goo",
+          "backgroundColor": "#ffffff",
+          "view": 19
+        },
+        {
+          "id": "GRpqno9FFK4WR-PzsFD-H4715",
+          "url": "https://ys.mihoyo.com/cloud",
+          "name": "云原神",
+          "src": "https://files.codelife.cc/icons/5f7185c1aa121b0c2ac6a05e.png",
+          "type": "icon",
+          "iconText": "原神",
+          "backgroundColor": "#9b59b6",
+          "view": 49,
+          "size": "1x1"
+        },
+        {
+          "id": "JNLNV8ngxqoZcFG2rvy4H7756",
+          "url": "https://www.hoyolab.com/accountCenter/postList?id=1015537",
+          "name": "HoYoLAB",
+          "src": "https://files.codelife.cc/user-website-icon/20240607/nQcuz-TDf9VdiLS0NdS3y4453.png",
+          "type": "icon",
+          "iconText": "HoYoLA",
+          "backgroundColor": "#1681ff",
+          "view": 18
+        },
+        {
+          "id": "i9YEVcieBNtg3-13MfwrT9861",
+          "url": "https://bbs.mihoyo.com/ys/",
+          "name": "米游社",
+          "src": "https://files.codelife.cc/icons/bbs.mihoyo.com.svg",
+          "type": "icon",
+          "iconText": "米游社",
+          "backgroundColor": "#72e1ff",
+          "view": 54
+        },
+        {
+          "id": "n2shDFC8ZC07C4qPZiBWr1902",
+          "url": "https://www.taobao.com/ ",
+          "name": "淘宝网",
+          "src": "https://files.codelife.cc/icons/taobao.svg",
+          "type": "icon",
+          "iconText": "淘宝网",
+          "backgroundColor": "#ff5c00",
+          "view": 66
+        },
+        {
+          "id": "IUhaSSt5L-NLV-0U3_WP00011",
+          "url": "https://www.jd.com",
+          "name": "京东",
+          "src": "https://files.codelife.cc/icons/jd.svg",
+          "type": "icon",
+          "iconText": "京东商",
+          "backgroundColor": "#ff0000",
+          "view": 32
+        },
+        {
+          "id": "tQmK2syh_4dNN6thB5evE5014",
+          "url": "https://www.goofish.com/",
+          "name": "闲鱼",
+          "src": "https://img.alicdn.com/tfs/TB19WObTNv1gK0jSZFFXXb0sXXa-144-144.png",
+          "type": "icon",
+          "iconText": "",
+          "backgroundColor": "#372128",
+          "view": 44
+        },
+        {
+          "id": "IC2ssYXhT",
+          "url": "https://www.smzdm.com/jingxuan/#feed-main",
+          "type": "icon",
+          "name": "什么值得买",
+          "src": "https://files.codelife.cc/icons/smzdm.svg",
+          "backgroundColor": "#ed1c24",
+          "view": 21,
+          "iconText": "什么值"
+        },
+        {
+          "id": "3HRh2gWkWkj-mF8TWZawD9364",
+          "url": "https://wx.qq.com/",
+          "name": "微信",
+          "src": "https://files.codelife.cc/icons/wechat.svg",
+          "type": "icon",
+          "iconText": "WeC",
+          "backgroundColor": "#2cac30",
+          "view": 4
+        },
+        {
+          "id": "ArlGaeevESlWERFIQ4cjb0753",
+          "url": "https://duckduckgo.com/?q=DuckDuckGo&ia=chat",
+          "name": "DuckAI",
+          "src": "https://files.codelife.cc/website/5c03d5bcd2a0791d7f73f7ba.png",
+          "type": "icon",
+          "iconText": "Duc",
+          "view": 12,
+          "backgroundColor": "#f01313"
+        },
+        {
+          "id": "3KcXS7wLiQPuv024BgiwV8851",
+          "url": "https://gemini.google.com/",
+          "name": "Gemini",
+          "src": "https://files.codelife.cc/user-website-icon/20240607/j7sv1TWd2ZTLN_KuxYOAc4653.png",
+          "type": "icon",
+          "iconText": "",
+          "backgroundColor": "#ee3b3b",
+          "size": "1x1",
+          "view": 5
+        },
+        {
+          "url": "https://www.doubao.com",
+          "type": "icon",
+          "name": "豆包",
+          "src": "https://files.codelife.cc/icons/doubao.com.webp",
+          "backgroundColor": "#ffffff",
+          "id": "8sCGQeSkrYlXlqOkPpCSA6293",
+          "iconText": "豆包-",
+          "view": 16
+        },
+        {
+          "id": "kHZc7VCmTrzhxQcAKbS1x3716",
+          "url": "https://www.speedtest.net/",
+          "name": "文件夹",
+          "src": "https://files.codelife.cc/icons/www.speedtest.net.svg",
+          "type": "folder",
+          "iconText": "Spe",
+          "backgroundColor": "#101115",
+          "size": "1x1",
+          "children": [
+            {
+              "id": "AXrPWhHp2L0otOnaB3y0_3811",
+              "url": "https://www.speedtest.net/run",
+              "name": "Speedtest",
+              "src": "https://files.codelife.cc/icons/www.speedtest.net.svg",
+              "type": "icon",
+              "iconText": "Spe",
+              "backgroundColor": "#101115",
+              "view": 4
+            },
+            {
+              "id": "nZTczfiPC7C0Osr1xpwrR3227",
+              "url": "https://wifiman.com/",
+              "name": "WiFiman",
+              "src": "https://wifiman.com/assets/icons/apple-touch-icon.png",
+              "type": "icon",
+              "iconText": "WiF",
+              "backgroundColor": "#7dac68",
+              "view": 1
+            },
+            {
+              "id": "KBWtLo-iN_lm55k2sMTx36457",
+              "url": "https://cst.speedtest.cn/",
+              "name": "speedtest.cn",
+              "src": "https://cst.speedtest.cn/./favicon.ico",
+              "type": "icon",
+              "iconText": "",
+              "backgroundColor": "#e67e22",
+              "view": 4
+            },
+            {
+              "id": "yJsH8A3HnT89E_wE87xPN9288",
+              "url": "https://net.netart.cn/",
+              "name": "net.netart.cn",
+              "src": "https://net.netart.cn/./icon.png",
+              "type": "icon",
+              "iconText": "网络面",
+              "backgroundColor": "#023373",
+              "view": 37
+            },
+            {
+              "id": "B_RnLGZQlK24OG7hpa4fj4909",
+              "url": "https://ljxi.github.io/NetworkPanel/",
+              "name": "ljxi.github.io",
+              "src": "https://files.codelife.cc/user-website-icon/20240830/RfCFAlWBl0GXVDoLsKMLC9386.png",
+              "type": "icon",
+              "iconText": "网络面",
+              "backgroundColor": "#f9620e",
+              "view": 16
+            }
+          ]
+        },
+        {
+          "id": "jlNOr57EChLTqkUenE78b0923",
+          "url": "https://squoosh.app",
+          "name": "文件夹",
+          "src": "https://files.codelife.cc/icons/squoosh.svg",
+          "type": "folder",
+          "iconText": "谷歌压",
+          "backgroundColor": "#4a494a",
+          "view": 2,
+          "size": "1x1",
+          "children": [
+            {
+              "id": "kiw9y5EbmBBVo-wZVlYm50782",
+              "url": "https://squoosh.app",
+              "name": "Squoosh",
+              "src": "https://files.codelife.cc/icons/squoosh.svg",
+              "type": "icon",
+              "iconText": "谷歌压",
+              "backgroundColor": "#4a494a",
+              "view": 5
+            },
+            {
+              "id": "X47v9OB2l_miHOLoK-fVr9894",
+              "url": "https://www.designkit.com/puzzle/",
+              "name": "美图设计室",
+              "src": "https://www.designkit.com/favicon.ico",
+              "type": "icon",
+              "iconText": "美图设",
+              "backgroundColor": "#ee3b3b",
+              "view": 2
+            },
+            {
+              "id": "UK6lpee40ikQbxc1-gvH51685",
+              "url": "https://app.clipchamp.com/",
+              "name": "Clipchamp",
+              "src": "https://files.codelife.cc/user-website-icon/20240607/jfnirbg4OqAlOvPyYiOX85588.png",
+              "type": "icon",
+              "iconText": "Cli",
+              "backgroundColor": "#f1c40f",
+              "view": 5
+            },
+            {
+              "id": "34NVr5ERd_lljMfsJcKh82184",
+              "url": "https://hicompress.com/compress-image",
+              "name": "Image Compressor",
+              "src": "https://files.codelife.cc/user-website-icon/20240927/yXtHCm4PObRSWKRAA4mp-3125.png",
+              "type": "icon",
+              "iconText": "Ima",
+              "backgroundColor": "#1681ff",
+              "view": 6
+            },
+            {
+              "id": "L9VeV56rjjSeJd7_u8iLi4781",
+              "url": "https://pairdrop.net/",
+              "name": "PairDrop",
+              "src": "https://pairdrop.net/images/favicon-96x96.png",
+              "type": "icon",
+              "iconText": "Pai",
+              "backgroundColor": "transparent",
+              "view": 1
+            },
+            {
+              "id": "S9oU-hW1QaUOLCus1pAU53577",
+              "url": "https://www.fotojet.com/cn/apps/?entry=collage",
+              "name": "拼图",
+              "src": "https://www.fotojet.com/templates/fotojet/favicon.ico",
+              "type": "icon",
+              "iconText": "在线平",
+              "backgroundColor": "transparent",
+              "view": 5
+            },
+            {
+              "id": "Hy0qSQCoSj_rGtr2MLDiO7445",
+              "url": "https://cobalt.tools/",
+              "name": "cobalt",
+              "src": "https://cobalt.tools/icons/apple-touch-icon.png",
+              "type": "icon",
+              "iconText": "cob",
+              "backgroundColor": "#f1c40f",
+              "view": 3
+            }
+          ]
+        },
+        {
+          "id": "ZF-6KMGWU6g8aa3PLZUES4741",
+          "url": "https://play.fancade.com/",
+          "name": "Fancade",
+          "src": "https://www.fancade.com/images/fancade.jpg",
+          "type": "icon",
+          "iconText": "Fan",
+          "backgroundColor": "#054092",
+          "view": 1
+        },
+        {
+          "id": "iOtWHp7dU",
+          "url": "https://weread.qq.com/",
+          "type": "icon",
+          "name": "微信读书",
+          "src": "https://files.codelife.cc/icons/weread-qq.svg",
+          "backgroundColor": "#fff",
+          "view": 6,
+          "iconText": ""
+        },
+        {
+          "id": "ECZj704pMXm-kB5w1_Cr41177",
+          "url": "https://open.spotify.com/",
+          "name": "Spotify",
+          "src": "https://files.codelife.cc/icons/spotify.svg",
+          "type": "icon",
+          "iconText": "Spo",
+          "backgroundColor": "#fff"
+        },
+        {
+          "id": "5r4kCP95yTnuyMnDowVZ_4451",
+          "url": "https://music.163.com/",
+          "name": "网易云音乐",
+          "src": "https://files.codelife.cc/icons/music163.svg",
+          "type": "icon",
+          "iconText": "网易云",
+          "backgroundColor": "#fe1816",
+          "view": 3
+        },
+        {
+          "id": "ywdjpNNzoyML6O6wIogjY3342",
+          "url": "https://www.dmm.co.jp/digital/videoa/-/list/?series=78603&sort=date",
+          "name": "FANZA",
+          "src": "",
+          "type": "text",
+          "iconText": "FANZA",
+          "backgroundColor": "#fc4548",
+          "view": 8
+        },
+        {
+          "id": "Q4q8yKmpefD5lwO6aUthR7089",
+          "url": "https://h5.waimai.meituan.com/waimai/mindex/home",
+          "name": "美团外卖",
+          "src": "https://s3plus.meituan.net/v1/mss_e602b0ee72a245fd9997b7276211d882/waimai-cfe-custom/favicon.png",
+          "type": "icon",
+          "iconText": "美团外",
+          "backgroundColor": "#f1c40f",
+          "view": 6
+        },
+        {
+          "id": "5bo-6sYEVN_R9xij9Gfk-3265",
+          "url": "https://h5.ele.me/",
+          "name": "饿了么",
+          "src": "https://files.codelife.cc/user-website-icon/20240828/VLw1M98UUpwJSIKXq42fg0906.png",
+          "type": "icon",
+          "iconText": "饿了么",
+          "backgroundColor": "#35A6FD",
+          "view": 1
+        },
+        {
+          "id": "kPrLC67WrSWXelS-qUJkm7417",
+          "url": "https://appraven.net/",
+          "name": "AppRaven",
+          "src": "https://appraven.net/logo192.png",
+          "type": "icon",
+          "iconText": "App",
+          "backgroundColor": "#e67e22",
+          "view": 3
+        },
+        {
+          "id": "-EOztO1XUjSkM_NAwPcAZ7084",
+          "url": "https://browserleaks.com/dns",
+          "name": "DNS Leak Test",
+          "src": "https://browserleaks.com/img/favicons/apple-touch-icon.png?v=49879122",
+          "type": "icon",
+          "iconText": "DNS",
+          "backgroundColor": "#7dac68",
+          "view": 6
+        },
+        {
+          "id": "aTNxMJtuXhVsHMWQnlm8A1343",
+          "url": "https://www.95598.cn/osgweb/electricityCharge",
+          "name": "国家电网",
+          "src": "https://files.codelife.cc/website/5f5b283eaa121b0c2ac69fa9.png",
+          "type": "icon",
+          "iconText": "国家电",
+          "view": 3
+        },
+        {
+          "url": "itab://store",
+          "type": "icon",
+          "name": "组件商城",
+          "src": "https://files.codelife.cc/icons/store.svg",
+          "backgroundColor": "#2989fe",
+          "id": "JptJiw8S0CMMcCzqsDjh83281",
+          "view": 13
+        },
+        {
+          "id": "MBAJmTX7yR_JbACoQ1UKh0418",
+          "url": "itab://setting",
+          "type": "icon",
+          "name": "设置",
+          "src": "https://files.codelife.cc/icons/setting.svg",
+          "view": 30,
+          "backgroundColor": "#fff"
+        },
+        {
+          "id": "lXqHChmShZOjOY8OddWGF0314",
+          "url": "https://search.smzdm.com/?c=faxian&s=Midea+%E7%BE%8E%E7%9A%84+%E7%82%92%E9%94%85+%E4%B8%8D%E7%B2%98%E9%94%85%E7%82%92%E8%8F%9C+%E6%9C%89%E7%9B%96+28cm&order=time&mx_v=b&v=b",
+          "name": "Midea 美的 炒锅 不粘锅炒菜 有盖",
+          "src": "",
+          "type": "text",
+          "iconText": "",
+          "backgroundColor": "#c8ac70",
+          "view": 6
+        },
+        {
+          "name": "i日历",
+          "component": "calendar",
+          "type": "component",
+          "size": "2x4",
+          "id": "gSZZkzSIL",
+          "view": 17
+        },
+        {
+          "name": "时钟",
+          "component": "clock",
+          "type": "component",
+          "insetType": "",
+          "src": "https://files.codelife.cc/tools-icon/clock.svg",
+          "size": "2x4",
+          "id": "QXdak7EKdTZEsADbXCLF63089",
+          "view": 4
+        },
+        {
+          "name": "i天气",
+          "component": "weather",
+          "type": "component",
+          "size": "2x4",
+          "id": "boeg77UMK",
+          "view": 19
+        },
+        {
+          "component": "xiayigejiaqi",
+          "insetType": "iframe",
+          "name": "下一个假期",
+          "src": "https://files.codelife.cc/tools-icon/xiayigejiaqi.svg",
+          "type": "component",
+          "backgroundColor": "#0c173f",
+          "size": "2x2",
+          "id": "TlsT0TusxO_S_1iV8_oJ31265",
+          "view": 3
+        },
+        {
+          "component": "todayShici",
+          "name": "今日诗词",
+          "src": "https://files.codelife.cc/icons/todayShici.svg",
+          "type": "component",
+          "backgroundColor": "#093744",
+          "size": "2x4",
+          "id": "pDSAdzzB6wAsrxqZVTdNo1885",
+          "view": 35
+        },
+        {
+          "name": "电影日历",
+          "component": "movieCalendar",
+          "type": "component",
+          "insetType": "",
+          "src": "https://files.codelife.cc/tools-icon/movieCalendar.svg",
+          "size": "2x2",
+          "id": "AMCmO0mTkAuDbfFxG9XVK8222",
+          "view": 24
+        }
+      ]
+    }
+  ]
+}
