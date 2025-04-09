@@ -1,4 +1,5 @@
 ## 来自：https://raw.githubusercontent.com/fmz200/wool_scripts/main/QuantumultX/rewrite/chongxie.txt
+## 转换：https://scripthub.vercel.app/
 
 # > 乐橙
 # hostname = dl-cu-hz.lechange.cn
