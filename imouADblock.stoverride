@@ -1,7 +1,27 @@
-# Stash 覆写规则 - 屏蔽乐橙广告
-name: Block LeChange Ads
-author: YourName
-description: 屏蔽乐橙APP的广告推送请求
-rules:
-  - DOMAIN,dl-cu-hz.lechange.cn
-  - URL-REGEX,^https:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush,REJECT
+version: 1
+name: 乐橙广告拦截
+description: 覆写 dl-cu-hz.lechange.cn 的广告推送接口，防止广告显示
+author: ChatGPT
+
+mitm:
+  hostnames:
+    - dl-cu-hz.lechange.cn
+
+script:
+  - name: lechange_adblock
+    type: response
+    match: ^https:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush
+    require-body: true
+    timeout: 5
+    script-proxy: |
+      $done({
+        status: "200",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          data: [],
+          msg: "ok",
+          code: "0"
+        })
+      });
