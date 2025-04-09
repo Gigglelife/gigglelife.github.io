@@ -1,0 +1,10 @@
+# > 乐橙
+# hostname = dl-cu-hz.lechange.cn
+^https:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush url reject
+
+# > 中国移动
+# hostname = client.app.coc.10086.cn, app.10086.cn
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/init\/startInit url reject
+^https?:\/\/client\.app\.coc\.10086\.cn\/biz-orange\/DN\/explorePage\/getAdverList url reject
+# 多个悬浮窗
+^https?:\/\/(client\.app\.coc|app)\.10086\.cn\/biz-orange\/DN\/emotionMarket url reject

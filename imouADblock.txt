@@ -1,3 +1,0 @@
-# > 乐橙
-# hostname = dl-cu-hz.lechange.cn
-^https:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush url reject
