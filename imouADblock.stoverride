@@ -1,27 +1,3 @@
-version: 1
-name: 乐橙广告拦截
-description: 覆写 dl-cu-hz.lechange.cn 的广告推送接口，防止广告显示
-author: ChatGPT
-
-mitm:
-  hostnames:
-    - dl-cu-hz.lechange.cn
-
-script:
-  - name: lechange_adblock
-    type: response
-    match: ^https:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush
-    require-body: true
-    timeout: 5
-    script-proxy: |
-      $done({
-        status: "200",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({
-          data: [],
-          msg: "ok",
-          code: "0"
-        })
-      });
+# > 乐橙
+# hostname = dl-cu-hz.lechange.cn
+^https:\/\/dl-cu-hz\.lechange\.cn\/oms-online\/advertisementPush url reject
