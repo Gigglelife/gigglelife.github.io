@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的导航</title>
+    <!-- Favicon for all devices -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐈‍⬛</text></svg>">
+    <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐈‍⬛</text></svg>">
+    <link rel="manifest" href="data:application/json,{'icons':[{'src':'data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><text y=\".9em\" font-size=\"90\">🐈‍⬛</text></svg>','sizes':'any','type':'image/svg+xml'}]}">
     <style>
         :root {
             --ios-blue: #007aff;
@@ -44,6 +48,21 @@
             font-weight: 600;
             font-size: clamp(3rem, 10vw, 5rem);
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        /* 猫图标样式 - 适配不同设备 */
+        .cat-icon {
+            font-size: 1.5em;
+            margin-right: 10px;
+            vertical-align: middle;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .cat-icon {
+                filter: brightness(1.2);
+            }
         }
 
         .grid {
@@ -221,7 +240,10 @@
 <body>
     <div class="container">
         <!-- 动态时间标题 -->
-        <h1 class="time-title" id="timeTitle"></h1>
+        <h1 class="time-title" id="timeTitle">
+            <span class="cat-icon">🐈‍⬛</span>
+            <span id="timeText"></span>
+        </h1>
         
         <!-- 网站图标网格 -->
         <div class="grid" id="appsGrid">
@@ -240,7 +262,7 @@
     </div>
 
     <footer>
-        <p>© <span id="year"></span> 我的导航 | 数据保存在本地</p>
+        <p>© <span id="year"></span> 我的导航 | 数据保存在本地 <span class="cat-icon">🐈‍⬛</span></p>
     </footer>
 
     <script>
@@ -257,7 +279,7 @@
                 hour12: false
             };
             const timeString = now.toLocaleTimeString('zh-CN', options);
-            document.getElementById('timeTitle').textContent = timeString;
+            document.getElementById('timeText').textContent = timeString;
         }
         
         // 每秒更新时间
