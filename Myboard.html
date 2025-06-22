@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的导航</title>
-    <!-- Favicon for all devices -->
-    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAVJREFUWEftlmtMW2UYx//P29JSynVo2CUDB5uS4a5hsqGLiZkOP0wDykbBGegoNaPdootx8onELDPeEivFCG0x2eUU2EAXoy5L1JgsM/GCGJ0w0G1kajaVQQEJnJ7zmGPsAkNoy5qQmL2fTt73+T/PL88th7DAhxY4Pm4DxDQDu3e/ajbIpmNMnEpMAyA6O07Udvz43uuzlTosQPUuVwkLWuyVnI3h+uXp4ob0uHh8DWAYwHIAaQwOMFDcIjk/+S99WABrmbsSYB8ziltaHe+Hg5j6Xm1pXKuy6gGwESo97Gur/fRmfQQADXVEOMTM44L5IU/rvi+igSgvb0wzsXoBYFmXZMhqarLLU/WzAtgsDXkKuJNAq24ImAehiAJve21/NBBWi/sAgV8D6FGvVPtxWID6+nox0Jv+LYHWzAjEfDGgZOS2t++cjBSiepdrMwtxjhkOn9/hDgtg3enaRjpxRlGDmJgcRUJ86rRYKlNpi7/2xM0A2hToJhNWK4a/zh858vxY6L3K0viggPoZAJtXcmg9cePMKEHBxpLNJpOxJSfz/tzA6FX8eq0budmPTI/FOOz1O+q0y4oKV3K8QntAVMmMNUQgZjCIvxegAx7JccZqeeswgQ4SxDqPtPe7OQHuyy86ZY5ftCN7eSEURcaEPDYjAwy8IQeDb8bp9c8CbCOQebZyMPNLIOwnoMcrOQvCTsG2rVWPZy7b8B6RmKvEMjMHicgUSR8weEwF8t+VnD1hATQDa1lDBxGKI3EeiQ0zN/v8zpqIF1FpaZsuUX/VIkAPALBHEmROG+azXr9T8zXjzLmIKsvd63XMXbcOgB+9fsfqqAH2lLpXQs99Cwbw70LqmbYN50HD4PM+yZkXdQY0QVWZu1CAPwQhZR6xQ5IfvJLj3nkBaKKap95ZoiiyjZkPaqMXnJz4XR4ZupNIXDOm3fF2yPFEYPAZY2JaBummjzCDT/skZ9G8AUJCq6XhDwLS5fHR02O//Lxdu5cDweRTvb6Rx+6xJsUl6Yd0pgSRuDR7koQwhHSqCntLq6MpZgCKPOEbudxr1RyqCu/o/Kb5g+JN9iIB/ki7i1+cVWE0J3u0bDF4aCQoL21vf248ZgAMvD7c310F0CJmfqXjq+YXSvJrDhGhDuDBP83LMnKWpF8BKIPBL/sk54uz9U/YH5KpwlAJNIChvu4sInqSgXMdXzYVPrHJ9jlAW8F8MiVnfScJPgptXet4hefYviuxB7jQfZkEuRgI9g9cSl2ZedcQAXpVxf60u9eWEbCFAb9Pcljmmp5oM7BFMBuD0F8a6+u6zqRu0Jxf/Gm4a0VOyj/fxKIrcdW6PB1Ug9AbepuO2n+LGcAt7IFZpVFl4DbA/zIDfwP3CJgw/wLUIQAAAABJRU5ErkJggg==">
+    <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAABAVJREFUWEftlmtMW2UYx//P29JSynVo2CUDB5uS4a5hsqGLiZkOP0wDykbBGegoNaPdootx8onELDPeEivFCG0x2eUU2EAXoy5L1JgsM/GCGJ0w0G1kajaVQQEJnJ7zmGPsAkNoy5qQmL2fTt73+T/PL88th7DAhxY4Pm4DxDQDu3e/ajbIpmNMnEpMAyA6O07Udvz43uuzlTosQPUuVwkLWuyVnI3h+uXp4ob0uHh8DWAYwHIAaQwOMFDcIjk/+S99WABrmbsSYB8ziltaHe+Hg5j6Xm1pXKuy6gGwESo97Gur/fRmfQQADXVEOMTM44L5IU/rvi+igSgvb0wzsXoBYFmXZMhqarLLU/WzAtgsDXkKuJNAq14ImAehiAJve21/NBBWi/sAgV8D6FGvVPtxWID6+nox0Jv+LYFWzAjEfDGgZOS2t++cjBSiepdrMwtxjhkOn9/hDgtg3enaRjpxRlGDmJgcRUJ86rRYKlNpi7/2xM0A2hToJhNWK4a/zh858vxY6L3K0viggPoZAJtXcmg9cePMKEHBxpLNJpOxJSfz/tzA6FX8eq0budmPTI/FOOz1O+q0y4oKV3K8QntAVMmMNUQgZjCIvxegAx7JccZqeeswgQ4SxDqPtPe7OQHuyy86ZY5ftCN7eSEURcaEPDYjAwy8IQeDb8bp9c8CbCOQebZyMPNLIOwnoMcrOQvCTsG2rVWPZy7b8B6RmKvEMjMHicgUSR8weEwF8t+VnD1hATQDa1lDBxGKI3EeiQ0zN/v8zpqIF1FpaZsuUX/VIkAPALBHEmROG+azXr9T8zXjzLmIKsvd63XMXbcOgB+9fsfqqAH2lLpXQs99Cwbw70LqmbYN50HD4PM+yZkXdQY0QVWZu1CAPwQhZR6xQ5IfvJLj3nkBaKKap95ZoiiyjZkPaqMXnJz4XR4ZupNIXDOm3fF2yPFEYPAZY2JaBummjzCDT/skZ9G8AUJCq6XhDwLS5fHR02O//Lxdu5cDweRTvb6Rx+6xJsUl6Yd0pgSRuDR7koQwhHSqCntLq6MpZgCKPOEbudxr1RyqCu/o/Kb5g+JN9iIB/ki7i1+cVWE0J3u0bDF4aCQoL21vf248ZgAMvD7c310F0CJmfqXjq+YXSvJrDhGhDuDBP83LMnKWpF8BKIPBL/sk54uz9U/YH5KpwlAJNIChvu4sInqSgXMdXzYVPrHJ9jlAW8F8MiVnfScJPgptXet4hefYviuxB7jQfZkEuRgI9g9cSl2ZedcQAXpVxf60u9eWEbCFAb9Pcljmmp5oM7BFMBuD0F8a6+u6zqRu0Jxf/Gm4a0VOyj/fxKIrcdW6PB1Ug9AbepuO2n+LGcAt7IFZpVFl4DbA/zIDfwP3CJgw/wLUIQAAAABJRU5ErkJggg==">
     <style>
         :root {
             --ios-blue: #007aff;
@@ -31,7 +30,7 @@
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1800px;
             margin: 0 auto;
             flex: 1;
             width: 100%;
@@ -41,35 +40,19 @@
         /* 增大时间字体 */
         .time-title {
             text-align: center;
-            margin: 20px 0 40px;
+            margin: 20px 0 30px;
             color: #000;
             font-weight: 600;
-            font-size: clamp(3rem, 10vw, 5rem);
+            font-size: clamp(2.5rem, 8vw, 4rem);
             text-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-
-        /* 猫图标样式 - 适配不同设备 */
-        .cat-icon {
-            font-size: 1.5em;
-            margin-right: 10px;
-            vertical-align: middle;
-            display: inline-block;
-            line-height: 1;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .cat-icon {
-                filter: brightness(1.2);
-            }
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
             justify-items: center;
-            padding: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 25px;
         }
 
         .app {
@@ -80,7 +63,7 @@
             color: #333;
             transition: all 0.3s ease;
             width: 100%;
-            max-width: 120px;
+            max-width: 80px;
         }
 
         .app:hover {
@@ -110,62 +93,75 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            overflow: hidden;
         }
 
         .app:hover .icon {
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 22%;
+        }
+
+        /* Special styles for YouTube, Telegram and Yahoo to keep padding */
+        .icon[data-domain="www.youtube.com"] img,
+        .icon[data-domain="web.telegram.org"] img,
+        .icon[data-domain="search.yahoo.co.jp"] img, 
+        .icon[data-domain="www.dmm.co.jp"] img, 
+        .icon[data-domain="ip.skk.moe"] img {
             width: 60%;
             height: 60%;
             object-fit: contain;
         }
 
         .icon svg {
-            width: 60%;
-            height: 60%;
+            width: 100%;
+            height: 100%;
         }
 
         .name {
-            font-size: clamp(12px, 2.5vw, 14px);
+            font-size: 12px;
             text-align: center;
             color: #000;
             font-weight: 500;
             word-break: break-word;
-            padding: 0 5px;
+            padding: 0 2px;
             line-height: 1.3;
         }
 
         footer {
             text-align: center;
             margin-top: 20px;
-            padding: 20px;
+            padding: 15px;
             color: #888;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         /* 添加网址表单 - 底部样式 */
         .add-form-container {
             background: rgba(255,255,255,0.9);
-            padding: 25px;
-            border-radius: 15px;
-            margin-top: 40px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            padding: 15px;
+            border-radius: 12px;
+            margin-top: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         .add-form-title {
             text-align: center;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
+            margin-bottom: 15px;
+            font-size: 1rem;
             color: #333;
         }
 
         .add-form {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: row;
             gap: 10px;
             justify-content: center;
             margin: 0 auto;
@@ -173,24 +169,26 @@
         }
 
         .add-form input {
-            padding: 12px 15px;
+            padding: 10px 12px;
             border: 1px solid #ddd;
             border-radius: 8px;
-            font-size: 16px;
-            min-width: 200px;
+            font-size: 14px;
+            min-width: 0;
             flex-grow: 1;
+            height: 40px;
         }
 
         .add-form button {
-            padding: 12px 25px;
+            padding: 0 15px;
             background-color: var(--ios-blue);
             color: white;
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            font-size: 16px;
+            font-size: 14px;
             transition: background-color 0.2s;
             white-space: nowrap;
+            height: 40px;
         }
 
         .add-form button:hover {
@@ -199,44 +197,54 @@
 
         @media (min-width: 768px) {
             .grid {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-                gap: 30px;
+                grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+                gap: 25px;
+            }
+            
+            .app {
+                max-width: 90px;
+            }
+            
+            .add-form-container {
+                padding: 20px;
+            }
+            
+            .name {
+                font-size: 13px;
             }
         }
 
         @media (min-width: 1024px) {
             .grid {
-                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
-                gap: 35px;
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 30px;
+            }
+            
+            .app {
+                max-width: 100px;
             }
         }
 
         @media (max-width: 480px) {
             .grid {
-                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                grid-template-columns: repeat(4, 1fr);
                 gap: 15px;
+            }
+            
+            .app {
+                max-width: 75px;
             }
             
             .name {
                 font-size: 11px;
-            }
-            
-            .add-form {
-                flex-direction: column;
-            }
-            
-            .add-form input {
-                width: 100%;
-            }
-            
-            .add-form button {
-                width: 100%;
             }
         }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- 动态时间标题 -->
+        <h1 class="time-title" id="timeTitle"></h1>
         
         <!-- 网站图标网格 -->
         <div class="grid" id="appsGrid">
@@ -247,15 +255,15 @@
         <div class="add-form-container">
             <h2 class="add-form-title">添加新网站</h2>
             <div class="add-form">
-                <input type="text" id="siteUrl" placeholder="输入网址 (如 example.com)" required>
-                <input type="text" id="siteName" placeholder="网站名称 (可选)">
-                <button onclick="addWebsite()">添加网站</button>
+                <input type="text" id="siteUrl" placeholder="输入网址" required>
+                <input type="text" id="siteName" placeholder="网站名称">
+                <button onclick="addWebsite()">添加</button>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>© <span id="year"></span> 我的导航 | 数据保存在本地 </p>
+        <p>© <span id="year"></span> 我的导航 | 数据保存在本地</p>
     </footer>
 
     <script>
@@ -272,7 +280,7 @@
                 hour12: false
             };
             const timeString = now.toLocaleTimeString('zh-CN', options);
-            document.getElementById('timeText').textContent = timeString;
+            document.getElementById('timeTitle').textContent = timeString;
         }
         
         // 每秒更新时间
@@ -284,6 +292,7 @@
             'keep.google.com': 'https://ssl.gstatic.com/keep/icon_2020q4v2_128.png',
             'nga.178.com': 'https://pp.myapp.com/ma_icon/0/icon_194590_1750237881/256',
             'bbs.mihoyo.com': 'https://pp.myapp.com/ma_icon/0/icon_53895146_1749542408/256',
+            'ys.mihoyo.com': 'https://pp.myapp.com/ma_icon/0/icon_54180091_1750413390/256',
             'music.163.com': 'https://pp.myapp.com/ma_icon/0/icon_1168851_1750242432/256',
             'open.spotify.com': 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/de/cb/93/decb93f2-b4da-0321-bd12-1e8716bab7f7/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/350x350.png',
             'twitter.com': 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/4b/51/0b4b51bc-ddaf-4383-6a8f-897120d26513/ProductionAppIcon-0-0-1x_U007emarketing-0-8-0-0-0-85-220.png/230x0w.webp',
@@ -293,7 +302,7 @@
         // 网络面板SVG图标
         const networkPanelIcon = `<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M568.96 459.242667l144-189.205334A382.208 382.208 0 0 0 512 213.333333c-212.074667 0-384 171.925333-384 384a382.293333 382.293333 0 0 0 93.397333 251.008l-64.554666 55.808A467.584 467.584 0 0 1 42.666667 597.333333C42.666667 338.133333 252.8 128 512 128c93.098667 0 179.861333 27.093333 252.842667 73.856l75.882666-99.690667 67.541334 51.413334-273.28 359.04a149.333333 149.333333 0 1 1-66.048-53.376z m266.453333-69.056l54.357334-71.424A467.242667 467.242667 0 0 1 981.333333 597.333333c0 113.706667-40.64 221.226667-113.237333 305.728l-64.725333-55.616A382.272 382.272 0 0 0 896 597.333333c0-76.288-22.250667-147.370667-60.586667-207.146666zM512 661.333333a64 64 0 1 0 0-128 64 64 0 0 0 0 128z" fill="#007aff"></path></svg>`;
 
-        // 初始化网站数据（调整了顺序）
+        // 初始化网站数据
         let websites = [
             { url: "https://chatgpt.com/", name: "ChatGPT" },
             { url: "https://chat.deepseek.com/", name: "DeepSeek" },
@@ -306,6 +315,7 @@
             { url: "https://nga.178.com/thread.php?fid=-7#topicrows", name: "NGA论坛" },
             { url: "https://www.chiphell.com/forum-146-1.html#separatorline", name: "Chiphell" },
             { url: "https://bbs.mihoyo.com/ys/", name: "米游社" },
+            { url: "https://ys.mihoyo.com/cloud", name: "云原神" },
             { url: "https://music.163.com/#/discover/recommend/taste", name: "网易云音乐" },
             { url: "https://open.spotify.com/", name: "Spotify" },
             { url: "https://web.telegram.org/", name: "Telegram" },
@@ -356,6 +366,7 @@
             websites.forEach(site => {
                 const icon = getWebsiteIcon(site.url, site.name);
                 const isSvg = icon === networkPanelIcon;
+                const domain = new URL(site.url).hostname;
                 
                 const appElement = document.createElement('a');
                 appElement.className = 'app';
@@ -375,7 +386,7 @@
                 } else {
                     appElement.innerHTML = `
                         <div class="icon-container">
-                            <div class="icon">
+                            <div class="icon" data-domain="${domain}">
                                 <img src="${icon}" alt="${site.name}" loading="lazy">
                             </div>
                         </div>
@@ -388,14 +399,15 @@
                     const deleteBtn = document.createElement('button');
                     deleteBtn.textContent = '×';
                     deleteBtn.style.position = 'absolute';
-                    deleteBtn.style.top = '-10px';
-                    deleteBtn.style.right = '-10px';
+                    deleteBtn.style.top = '-8px';
+                    deleteBtn.style.right = '-8px';
                     deleteBtn.style.background = 'red';
                     deleteBtn.style.color = 'white';
                     deleteBtn.style.border = 'none';
                     deleteBtn.style.borderRadius = '50%';
-                    deleteBtn.style.width = '20px';
-                    deleteBtn.style.height = '20px';
+                    deleteBtn.style.width = '18px';
+                    deleteBtn.style.height = '18px';
+                    deleteBtn.style.fontSize = '12px';
                     deleteBtn.style.display = 'none';
                     deleteBtn.style.cursor = 'pointer';
                     deleteBtn.onclick = (e) => {
@@ -505,6 +517,7 @@
                 "https://nga.178.com/thread.php?fid=-7#topicrows",
                 "https://www.chiphell.com/forum-146-1.html#separatorline",
                 "https://bbs.mihoyo.com/ys/",
+                "https://ys.mihoyo.com/cloud",
                 "https://music.163.com/#/discover/recommend/taste",
                 "https://open.spotify.com/",
                 "https://web.telegram.org/",
