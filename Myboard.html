@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的导航</title>
+    <style>
+        :root {
+            --ios-blue: #007aff;
+            --ios-gray: #f5f5f7;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: -apple-system, BlinkMacSystemFont, MiSans, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        }
+
+        body {
+            background-color: var(--ios-gray);
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: linear-gradient(to bottom, #f5f5f7, #e5e5ea);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            flex: 1;
+            width: 100%;
+            padding: 0 20px;
+        }
+
+        /* 增大时间字体 */
+        .time-title {
+            text-align: center;
+            margin: 20px 0 40px;
+            color: #000;
+            font-weight: 600;
+            font-size: clamp(3rem, 10vw, 5rem);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+            gap: 25px;
+            justify-items: center;
+            padding: 10px;
+            margin-bottom: 30px;
+        }
+
+        .app {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 120px;
+        }
+
+        .app:hover {
+            transform: scale(1.1);
+            filter: brightness(1.05);
+        }
+
+        .app:active {
+            transform: scale(0.95);
+        }
+
+        .icon-container {
+            position: relative;
+            width: 100%;
+            padding-bottom: 100%;
+            margin-bottom: 8px;
+        }
+
+        .icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #fff;
+            border-radius: 22%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .app:hover .icon {
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+
+        .icon img {
+            width: 60%;
+            height: 60%;
+            object-fit: contain;
+        }
+
+        .icon svg {
+            width: 60%;
+            height: 60%;
+        }
+
+        .name {
+            font-size: clamp(12px, 2.5vw, 14px);
+            text-align: center;
+            color: #000;
+            font-weight: 500;
+            word-break: break-word;
+            padding: 0 5px;
+            line-height: 1.3;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 20px;
+            color: #888;
+            font-size: 14px;
+        }
+
+        /* 添加网址表单 - 底部样式 */
+        .add-form-container {
+            background: rgba(255,255,255,0.9);
+            padding: 25px;
+            border-radius: 15px;
+            margin-top: 40px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .add-form-title {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            color: #333;
+        }
+
+        .add-form {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+
+        .add-form input {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            min-width: 200px;
+            flex-grow: 1;
+        }
+
+        .add-form button {
+            padding: 12px 25px;
+            background-color: var(--ios-blue);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s;
+            white-space: nowrap;
+        }
+
+        .add-form button:hover {
+            background-color: #0062cc;
+        }
+
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+                gap: 30px;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+                gap: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .grid {
+                grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+                gap: 15px;
+            }
+            
+            .name {
+                font-size: 11px;
+            }
+            
+            .add-form {
+                flex-direction: column;
+            }
+            
+            .add-form input {
+                width: 100%;
+            }
+            
+            .add-form button {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 动态时间标题 -->
+        <h1 class="time-title" id="timeTitle"></h1>
+        
+        <!-- 网站图标网格 -->
+        <div class="grid" id="appsGrid">
+            <!-- 网站将在这里动态加载 -->
+        </div>
+        
+        <!-- 底部添加网址表单 -->
+        <div class="add-form-container">
+            <h2 class="add-form-title">添加新网站</h2>
+            <div class="add-form">
+                <input type="text" id="siteUrl" placeholder="输入网址 (如 example.com)" required>
+                <input type="text" id="siteName" placeholder="网站名称 (可选)">
+                <button onclick="addWebsite()">添加网站</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>© <span id="year"></span> 我的导航 | 数据保存在本地</p>
+    </footer>
+
+    <script>
+        // 自动更新年份
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // 更新时间显示
+        function updateTime() {
+            const now = new Date();
+            const options = { 
+                hour: '2-digit', 
+                minute: '2-digit', 
+                second: '2-digit',
+                hour12: false
+            };
+            const timeString = now.toLocaleTimeString('zh-CN', options);
+            document.getElementById('timeTitle').textContent = timeString;
+        }
+        
+        // 每秒更新时间
+        updateTime();
+        setInterval(updateTime, 1000);
+        
+        // 自定义图标映射
+        const customIcons = {
+            'keep.google.com': 'https://ssl.gstatic.com/keep/icon_2020q4v2_128.png',
+            'nga.178.com': 'https://pp.myapp.com/ma_icon/0/icon_194590_1750237881/256',
+            'bbs.mihoyo.com': 'https://pp.myapp.com/ma_icon/0/icon_53895146_1749542408/256',
+            'music.163.com': 'https://pp.myapp.com/ma_icon/0/icon_1168851_1750242432/256',
+            'open.spotify.com': 'https://is1-ssl.mzstatic.com/image/thumb/Purple211/v4/de/cb/93/decb93f2-b4da-0321-bd12-1e8716bab7f7/AppIcon-0-0-1x_U007emarketing-0-7-0-0-85-220.png/350x350.png',
+            'twitter.com': 'https://is1-ssl.mzstatic.com/image/thumb/Purple221/v4/0b/4b/51/0b4b51bc-ddaf-4383-6a8f-897120d26513/ProductionAppIcon-0-0-1x_U007emarketing-0-8-0-0-0-85-220.png/230x0w.webp',
+            'ljxi.github.io': 'network-panel-icon' // 特殊处理SVG图标
+        };
+
+        // 网络面板SVG图标
+        const networkPanelIcon = `<svg viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M568.96 459.242667l144-189.205334A382.208 382.208 0 0 0 512 213.333333c-212.074667 0-384 171.925333-384 384a382.293333 382.293333 0 0 0 93.397333 251.008l-64.554666 55.808A467.584 467.584 0 0 1 42.666667 597.333333C42.666667 338.133333 252.8 128 512 128c93.098667 0 179.861333 27.093333 252.842667 73.856l75.882666-99.690667 67.541334 51.413334-273.28 359.04a149.333333 149.333333 0 1 1-66.048-53.376z m266.453333-69.056l54.357334-71.424A467.242667 467.242667 0 0 1 981.333333 597.333333c0 113.706667-40.64 221.226667-113.237333 305.728l-64.725333-55.616A382.272 382.272 0 0 0 896 597.333333c0-76.288-22.250667-147.370667-60.586667-207.146666zM512 661.333333a64 64 0 1 0 0-128 64 64 0 0 0 0 128z" fill="#007aff"></path></svg>`;
+
+        // 初始化网站数据（调整了顺序）
+        let websites = [
+            { url: "https://chatgpt.com/", name: "ChatGPT" },
+            { url: "https://chat.deepseek.com/", name: "DeepSeek" },
+            { url: "https://keep.google.com/", name: "Google Keep" },
+            { url: "https://www.kdocs.cn/latest?from=docs", name: "金山文档" },
+            { url: "https://tophub.today/dashboard", name: "今日热榜" },
+            { url: "https://www.inoreader.com/feed/https%3A%2F%2Ffeedx.net%2Frss%2F163easy.xml", name: "Inoreader" },
+            { url: "https://www.bilibili.com", name: "哔哩哔哩" },
+            { url: "https://www.youtube.com", name: "YouTube" },
+            { url: "https://nga.178.com/thread.php?fid=-7#topicrows", name: "NGA论坛" },
+            { url: "https://www.chiphell.com/forum-146-1.html#separatorline", name: "Chiphell" },
+            { url: "https://bbs.mihoyo.com/ys/", name: "米游社" },
+            { url: "https://music.163.com/#/discover/recommend/taste", name: "网易云音乐" },
+            { url: "https://open.spotify.com/", name: "Spotify" },
+            { url: "https://web.telegram.org/", name: "Telegram" },
+            { url: "https://twitter.com/", name: "Twitter" },
+            { url: "https://www.instagram.com/explore/", name: "Instagram" },
+            { url: "https://weibo.com/hot", name: "微博热搜" },
+            { url: "https://search.yahoo.co.jp/realtime/search?mtype=image&p=TiP%E6%92%AE%E5%BD%B1%E4%BC%9A", name: "Yahoo实时" },
+            { url: "https://www.tiktok.com/following", name: "TikTok" },
+            { url: "https://www.dmm.co.jp/digital/videoa/-/list/?series=78603&sort=date", name: "DMM视频" },
+            { url: "https://www.pixiv.net/", name: "Pixiv" },
+            { url: "https://squoosh.app/", name: "图片压缩" },
+            { url: "https://ip.skk.moe/", name: "IP检测" },
+            { url: "https://ljxi.github.io/NetworkPanel/", name: "网络面板" },
+            { url: "https://clash.razord.top/#/connections", name: "Clash控制" },
+            { url: "https://d.metacubex.one/#/conns", name: "Meta控制台" }
+        ];
+
+        // 从本地存储加载用户添加的网站
+        function loadWebsites() {
+            const savedWebsites = localStorage.getItem('userWebsites');
+            if (savedWebsites) {
+                websites = websites.concat(JSON.parse(savedWebsites));
+            }
+            renderWebsites();
+        }
+
+        // 获取网站图标URL
+        function getWebsiteIcon(url, name) {
+            const domain = new URL(url).hostname;
+            
+            // 检查是否有自定义图标
+            if (customIcons[domain]) {
+                if (customIcons[domain] === 'network-panel-icon') {
+                    return networkPanelIcon;
+                }
+                return customIcons[domain];
+            }
+            
+            // 默认使用Google的favicon服务
+            return `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
+        }
+
+        // 渲染所有网站
+        function renderWebsites() {
+            const grid = document.getElementById('appsGrid');
+            grid.innerHTML = '';
+            
+            websites.forEach(site => {
+                const icon = getWebsiteIcon(site.url, site.name);
+                const isSvg = icon === networkPanelIcon;
+                
+                const appElement = document.createElement('a');
+                appElement.className = 'app';
+                appElement.href = site.url;
+                appElement.target = '_blank';
+                appElement.rel = 'noopener noreferrer';
+                
+                if (isSvg) {
+                    appElement.innerHTML = `
+                        <div class="icon-container">
+                            <div class="icon">
+                                ${icon}
+                            </div>
+                        </div>
+                        <span class="name">${site.name}</span>
+                    `;
+                } else {
+                    appElement.innerHTML = `
+                        <div class="icon-container">
+                            <div class="icon">
+                                <img src="${icon}" alt="${site.name}" loading="lazy">
+                            </div>
+                        </div>
+                        <span class="name">${site.name}</span>
+                    `;
+                }
+                
+                // 添加删除按钮（仅对用户添加的网站）
+                if (!isDefaultWebsite(site.url)) {
+                    const deleteBtn = document.createElement('button');
+                    deleteBtn.textContent = '×';
+                    deleteBtn.style.position = 'absolute';
+                    deleteBtn.style.top = '-10px';
+                    deleteBtn.style.right = '-10px';
+                    deleteBtn.style.background = 'red';
+                    deleteBtn.style.color = 'white';
+                    deleteBtn.style.border = 'none';
+                    deleteBtn.style.borderRadius = '50%';
+                    deleteBtn.style.width = '20px';
+                    deleteBtn.style.height = '20px';
+                    deleteBtn.style.display = 'none';
+                    deleteBtn.style.cursor = 'pointer';
+                    deleteBtn.onclick = (e) => {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        removeWebsite(site.url);
+                    };
+                    
+                    appElement.style.position = 'relative';
+                    appElement.appendChild(deleteBtn);
+                    
+                    appElement.addEventListener('mouseenter', () => {
+                        deleteBtn.style.display = 'block';
+                    });
+                    
+                    appElement.addEventListener('mouseleave', () => {
+                        deleteBtn.style.display = 'none';
+                    });
+                }
+                
+                grid.appendChild(appElement);
+            });
+            
+            setupClickAnimation();
+        }
+
+        // 添加新网站
+        function addWebsite() {
+            const urlInput = document.getElementById('siteUrl');
+            const nameInput = document.getElementById('siteName');
+            
+            let url = urlInput.value.trim();
+            let name = nameInput.value.trim();
+            
+            // 验证URL格式
+            if (!url.startsWith('http://') && !url.startsWith('https://')) {
+                url = 'https://' + url;
+            }
+            
+            try {
+                new URL(url); // 验证是否是有效URL
+            } catch (e) {
+                alert('请输入有效的网址');
+                return;
+            }
+            
+            // 如果没有提供名称，使用域名作为名称
+            if (!name) {
+                name = new URL(url).hostname.replace('www.', '');
+            }
+            
+            // 创建新网站对象
+            const newSite = { url, name };
+            
+            // 检查是否已存在
+            if (websites.some(site => site.url === url)) {
+                alert('该网址已存在');
+                return;
+            }
+            
+            // 添加到数组
+            websites.push(newSite);
+            
+            // 保存到本地存储
+            const userWebsites = websites.filter(site => 
+                !isDefaultWebsite(site.url)
+            );
+            localStorage.setItem('userWebsites', JSON.stringify(userWebsites));
+            
+            // 重新渲染
+            renderWebsites();
+            
+            // 清空输入框
+            urlInput.value = '';
+            nameInput.value = '';
+            urlInput.focus();
+        }
+
+        // 删除网站
+        function removeWebsite(url) {
+            if (confirm('确定要删除这个网站吗？')) {
+                // 从数组中移除
+                websites = websites.filter(site => site.url !== url);
+                
+                // 更新本地存储
+                const userWebsites = websites.filter(site => 
+                    !isDefaultWebsite(site.url)
+                );
+                localStorage.setItem('userWebsites', JSON.stringify(userWebsites));
+                
+                // 重新渲染
+                renderWebsites();
+            }
+        }
+
+        // 检查是否是默认网站
+        function isDefaultWebsite(url) {
+            const defaultUrls = [
+                "https://chatgpt.com/",
+                "https://chat.deepseek.com/",
+                "https://keep.google.com/",
+                "https://www.kdocs.cn/latest?from=docs",
+                "https://tophub.today/dashboard",
+                "https://www.inoreader.com/feed/https%3A%2F%2Ffeedx.net%2Frss%2F163easy.xml",
+                "https://www.bilibili.com",
+                "https://www.youtube.com",
+                "https://nga.178.com/thread.php?fid=-7#topicrows",
+                "https://www.chiphell.com/forum-146-1.html#separatorline",
+                "https://bbs.mihoyo.com/ys/",
+                "https://music.163.com/#/discover/recommend/taste",
+                "https://open.spotify.com/",
+                "https://web.telegram.org/",
+                "https://twitter.com/",
+                "https://www.instagram.com/explore/",
+                "https://weibo.com/hot",
+                "https://search.yahoo.co.jp/realtime/search?mtype=image&p=TiP%E6%92%AE%E5%BD%B1%E4%BC%9A",
+                "https://www.tiktok.com/following",
+                "https://www.dmm.co.jp/digital/videoa/-/list/?series=78603&sort=date",
+                "https://www.pixiv.net/",
+                "https://squoosh.app/",
+                "https://ip.skk.moe/",
+                "https://ljxi.github.io/NetworkPanel/",
+                "https://clash.razord.top/#/connections",
+                "https://d.metacubex.one/#/conns"
+            ];
+            return defaultUrls.includes(url);
+        }
+
+        // 点击动画效果
+        function setupClickAnimation() {
+            const apps = document.querySelectorAll('.app');
+            
+            apps.forEach(app => {
+                app.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'BUTTON') return;
+                    
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1.1)';
+                    }, 100);
+                });
+                
+                app.addEventListener('dblclick', function(e) {
+                    e.preventDefault();
+                });
+            });
+        }
+
+        // 页面加载完成后初始化
+        document.addEventListener('DOMContentLoaded', function() {
+            loadWebsites();
+            
+            // 表单回车提交
+            document.getElementById('siteUrl').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addWebsite();
+                }
+            });
+            
+            document.getElementById('siteName').addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    addWebsite();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
