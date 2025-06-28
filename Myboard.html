@@ -325,6 +325,7 @@
         let websites = [
             { url: "https://chatgpt.com/", name: "ChatGPT" },
             { url: "https://chat.deepseek.com/", name: "DeepSeek" },
+            { url: "https://earth.google.com/web/", name: "Google Earth" },
             { url: "https://mail.google.com/?authuser=1", name: "GMail" },
             { url: "https://keep.google.com/", name: "Google Keep" },
             { url: "https://www.kdocs.cn/latest?from=docs", name: "金山文档" },
@@ -334,10 +335,12 @@
             { url: "https://www.youtube.com", name: "YouTube" },
             { url: "https://www.douyin.com/?is_from_mobile_home=1&recommend=1", name: "抖音" },
             { url: "https://www.tiktok.com/following", name: "TikTok" },
+            { url: "https://movie.douban.com/", name: "豆瓣电影" },
             { url: "https://nga.178.com/thread.php?fid=-7#topicrows", name: "NGA论坛" },
             { url: "https://www.chiphell.com/forum-146-1.html#separatorline", name: "Chiphell" },
             { url: "https://bbs.mihoyo.com/ys/", name: "米游社" },
             { url: "https://ys.mihoyo.com/cloud", name: "云原神" },
+            { url: "https://www.goofish.com/", name: "闲鱼" },
             { url: "https://music.163.com/#/discover/recommend/taste", name: "网易云音乐" },
             { url: "https://open.spotify.com/", name: "Spotify" },
             { url: "https://web.telegram.org/", name: "Telegram" },
@@ -348,11 +351,13 @@
             { url: "https://www.dmm.co.jp/digital/videoa/-/list/?series=78603&sort=date", name: "DMM视频" },
             { url: "https://www.pixiv.net/", name: "Pixiv" },
             { url: "https://squoosh.app/", name: "图片压缩" },
+            { url: "https://www.designkit.com/puzzle/", name: "美图设计室" },
             { url: "https://ip.skk.moe/", name: "IP检测" },
             { url: "https://ljxi.github.io/NetworkPanel/", name: "网络面板" },
             { url: "https://clash.razord.top/#/connections", name: "Clash控制" },
             { url: "https://d.metacubex.one/#/conns", name: "Meta控制台" },
-            { url: "https://board.zash.run.place/#/proxies", name: "zashboard" }
+            { url: "https://board.zash.run.place/#/proxies", name: "zashboard" },
+            { url: https://play.fancade.com/", name: "fancade" }
         ];
 
         // 从本地存储加载用户添加的网站
@@ -530,7 +535,9 @@
             const defaultUrls = [
                 "https://chatgpt.com/",
                 "https://chat.deepseek.com/",
+                "https://earth.google.com/web/",
                 "https://keep.google.com/",
+                "https://mail.google.com/?authuser=1",
                 "https://www.kdocs.cn/latest?from=docs",
                 "https://tophub.today/dashboard",
                 "https://www.inoreader.com/feed/https%3A%2F%2Ffeedx.net%2Frss%2F163easy.xml",
@@ -540,6 +547,7 @@
                 "https://www.chiphell.com/forum-146-1.html#separatorline",
                 "https://bbs.mihoyo.com/ys/",
                 "https://ys.mihoyo.com/cloud",
+                "https://www.goofish.com/",
                 "https://music.163.com/#/discover/recommend/taste",
                 "https://open.spotify.com/",
                 "https://web.telegram.org/",
@@ -547,14 +555,19 @@
                 "https://www.instagram.com/explore/",
                 "https://weibo.com/hot",
                 "https://search.yahoo.co.jp/realtime/search?mtype=image&p=TiP%E6%92%AE%E5%BD%B1%E4%BC%9A",
+                "https://www.douyin.com/?is_from_mobile_home=1&recommend=1",
                 "https://www.tiktok.com/following",
+                "https://movie.douban.com/",
                 "https://www.dmm.co.jp/digital/videoa/-/list/?series=78603&sort=date",
                 "https://www.pixiv.net/",
                 "https://squoosh.app/",
+                "https://www.designkit.com/puzzle/",
                 "https://ip.skk.moe/",
                 "https://ljxi.github.io/NetworkPanel/",
                 "https://clash.razord.top/#/connections",
-                "https://d.metacubex.one/#/conns"
+                "https://d.metacubex.one/#/conns",
+                "https://board.zash.run.place/#/proxies",
+                "https://play.fancade.com/"
             ];
             return defaultUrls.includes(url);
         }
