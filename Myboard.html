@@ -312,7 +312,6 @@
             
             websites.forEach(site => {
                 const icon = getWebsiteIcon(site.url, site.name);
-                const isSvg = icon === networkPanelIcon;
                 const domain = new URL(site.url).hostname;
                 
                 const appElement = document.createElement('a');
@@ -321,16 +320,6 @@
                 appElement.target = '_blank';
                 appElement.rel = 'noopener noreferrer';
                 
-                if (isSvg) {
-                    appElement.innerHTML = `
-                        <div class="icon-container">
-                            <div class="icon">
-                                ${icon}
-                            </div>
-                        </div>
-                        <span class="name">${site.name}</span>
-                    `;
-                } else {
                     appElement.innerHTML = `
                         <div class="icon-container">
                             <div class="icon" data-domain="${domain}">
