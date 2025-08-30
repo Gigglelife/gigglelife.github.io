@@ -301,14 +301,6 @@
         function getWebsiteIcon(url, name) {
             const domain = new URL(url).hostname;
             
-            // 检查是否有自定义图标
-            if (customIcons[domain]) {
-                if (customIcons[domain] === 'network-panel-icon') {
-                    return networkPanelIcon;
-                }
-                return customIcons[domain];
-            }
-            
             // 默认使用Google的favicon服务
             return `https://www.google.com/s2/favicons?domain=${domain}&sz=256`;
         }
